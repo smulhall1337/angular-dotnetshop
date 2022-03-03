@@ -1,0 +1,26 @@
+.form-section-header h2 {
+    padding-left: 25px;
+    color: white;
+    font-family: 'merriweather', serif;
+    padding-top: 2%;
+    font-size: 50px;
+}
+
+.header-start {
+    background-color: #1278B8;
+    border-style: groove;
+    border: black;
+    width: 100%;
+    height: 75px;
+}
+
+.form-section-content {
+    -webkit-transition: opacity 0.5s ease-out;
+    transition: opacity 0.5s ease-out;
+    opacity: 0.5;
+}
+
+.starth5 {
+    font-weight: bold;
+    color: #1278B8;
+}

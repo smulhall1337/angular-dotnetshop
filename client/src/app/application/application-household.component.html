@@ -1,0 +1,940 @@
+<!-- #Create Your Household -->
+<div class="row" id="household" *ngIf="showHousehold">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <img src='../../assets/images/Large/householdheader_large.png'>
+            <div class="section">
+                <h1 i18n="@@application-creatingHousehold-comingUp" style="text-align: center;">
+                    <b>
+                        Coming Up In This Section
+                    </b>
+                </h1>
+            </div>
+            <p i18n="@@application-creatingHousehold-inThisSection" style="text-align: center;">
+                In this section, you will be asked for identifying information about who is applying for
+                food assistance and who lives in your household.
+            </p>
+            <p i18n="@@application-creatingHousehold-includeWhoPurchaseAndPrepareMeals" style="text-align: center;">
+                Include only people who are living in your home who purchase and prepare meals together.
+            </p>
+            <p i18n="@@application-creatingHousehold-SSN" style="text-align: center;">
+                You only have to give social security numbers (SSN) and citizenship/immigration
+                information for those household members for whom you are asking for assistance benefits.
+                You will also have to give information such as income for other household members not
+                seeking benefits so we can determine if the persons for whom you are applying are
+                eligible to receive benefits.
+            </p>
+            <h1 i18n="@@application-creatingHousehold-whatYouNeed" style="text-align: center; color:#F36421;">
+                <b>
+                    You May Need
+                </b>
+            </h1>
+            <div class="row" style="text-align: center;">
+                <div class="col-md-12">
+                    <p><i class="fas fa-arrow-right fa-3x" style="vertical-align: middle; margin-right: 2%;"></i>Social
+                        Security Numbers</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12" style="text-align: center;">
+                    <p><i class="fas fa-arrow-right fa-3x" style="vertical-align: middle; margin-right: 2%;"></i>Birth
+                        Dates</p>
+                </div>
+            </div>
+            <div class="section">
+                <div class="centered-row">
+                    <div class="centered-col">
+                        <button class="btn btn-secondary btn-lg button-left" (click)="BackToPreamble()">Return To
+                            Preamble Section</button>
+                    </div>
+                    <div class="centered-col">
+                        <button class="btn btn-primary btn-lg" (click)="ContinueToApplicant()">Continue</button>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
+<!-- Household ##Applicant -->
+<div class="row" *ngIf="showApplicant" id="applicant">
+    <div class="content-card">
+        <div class="card-body">
+            <div class="border" style="margin: 1%">
+                <div class="section">
+                    <h1 i18n="@@application-creatingHousehold-Applicant" style="text-align: center;">
+                        <b>
+                            Applicant
+                        </b>
+                    </h1>
+                </div>
+                <div class="row" style="margin: 1%">
+                    <div class="col-md-4">
+                        <label for="validationCustom01" class="form-label">First
+                            Name</label>
+                        <input type="text" class="form-control" id="validationCustom01" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationCustom02" class="form-label">Middle</label>
+                        <input type="text" class="form-control" id="validationCustom02" value="">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationCustom03" class="form-label">Last
+                            Name</label>
+                        <input type="text" class="form-control" id="validationCustom02" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin: 1%">
+                    <div class="col-md-4">
+                        <label for="validationCustom04" class="form-label">Suffix</label>
+                        <select class="form-select" id="validationCustom04">
+                            <option selected disabled value="">Suffx
+                            </option>
+                            <option>Jr</option>
+                            <option>Sr</option>
+                            <option>III</option>
+                            <option>IV</option>
+                            <option>V</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field>
+                            <input matInput [matDatepicker]="picker" placeholder="Date Of Birth">
+                            <mat-datepicker-toggle matSuffix [for]="picker">
+                            </mat-datepicker-toggle>
+                            <mat-datepicker #picker>
+                            </mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <br>
+                <hr>
+                <h3 i18n="@@application-creatingHousehold-houseHoldMember" style="text-align: center;">
+                    <b>
+                        Are you a household member on this case?
+                    </b>
+                </h3>
+                <fieldset>
+                    <div class="toggle">
+                        <input type="radio" name="householdMember" value="weight" id="householdMemberYes"
+                            checked="checked" />
+                        <label for="householdMemberYes">Yes</label>
+                        <input type="radio" name="householdMember" value="dimensions" id="householdMemberNo" />
+                        <label for="householdMemberNo">No</label>
+                    </div>
+                </fieldset>
+                <hr>
+                <h3 i18n="@@application-creatingHousehold-headOfHousehold" style="text-align: center;">
+                    <b>
+                        Are you the Head of Household?
+                    </b>
+                </h3>
+                <fieldset>
+                    <div class="toggle">
+                        <input type="radio" name="headOfHousehold" value="weight" id="headOfHouseholdYes"
+                            checked="checked" />
+                        <label for="headOfHouseholdYes">Yes</label>
+                        <input type="radio" name="headOfHousehold" value="dimensions" id="headOfHouseholdNo" />
+                        <label for="headOfHouseholdNo">No</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="section">
+                <div class="centered-row">
+                    <div class="centered-col">
+                        <button class="btn btn-secondary btn-lg button-left" (click)="BackToHouseholdStart()">Go
+                            Back</button>
+                    </div>
+                    <div class="centered-col">
+                        <button class="btn btn-primary btn-lg" (click)="ContinueToContact()">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Household ##Contact -->
+<div class="row" *ngIf="showContact" id="contact">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <div class="section">
+                <h1 i18n="@@application-householdContact-header" style="text-align: center;">
+                    <b>
+                        Household Contact
+                    </b>
+                </h1>
+
+            </div>
+            <div class="section">
+                <div class="row" style="margin: 1%">
+                    <p i18n="@@application-householdContact-enterInformation">
+                        <b>
+                            Enter information of the household that is applying for food assistance
+                        </b>
+                    </p>
+                    <div class="col-md-12">
+                        <label for="validationCustom01" class="form-label"
+                            style="color:#F36421; font-weight: bold;">Home Address</label>
+                        <input type="text" class="form-control" id="validationCustom01" value="Address Line 1" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin: 1%">
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" id="validationCustom01" value="Address Line 2" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin: 1%">
+                    <div class="col-md-4">
+                        <label for="validationCustom04" class="form-label">City</label>
+                        <input type="text" class="form-control" id="validationCustom01" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationCustom04" class="form-label">State</label>
+                        <input type="text" class="form-control" id="validationCustom01" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationCustom04" class="form-label">Zip Code</label>
+                        <input type="text" class="form-control" id="validationCustom01" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3 i18n="@@application-householdContact-mailingAddressSameAsHome">
+                <b>
+                    Is your Mailing Address the same as your above Home Address?
+                </b>
+            </h3>
+            <fieldset>
+                <div class="toggle">
+                    <input type="radio" name="mailingAddressSameAsHome" value="weight" id="mailingAddressSameAsHomeYes"
+                        checked="checked" />
+                    <label for="mailingAddressSameAsHomeYes">Yes</label>
+                    <input type="radio" name="mailingAddressSameAsHome" value="dimensions" id="mailingAddressSameAsHomeNo" />
+                    <label for="mailingAddressSameAsHomeNo">No</label>
+                </div>
+            </fieldset>
+            <hr>
+            <div class="section">
+                <div class="row">
+                    <h3 i18n="@@application-householdContact-whatCounty">
+                        <b>
+                            What county do you live in?
+                        </b>
+                    </h3>
+                    <br>
+                    <div class="col-4">
+                        <!-- wow look, nothing -->
+                    </div>
+                    <div class="col-4">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Open this select menu
+                            </option>
+                            <option value="1">One
+                            </option>
+                            <option value="2">Two
+                            </option>
+                            <option value="3">Three
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <!-- wow look, nothing -->
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="centered-row">
+                <div class="centered-col">
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="email" i18n="@@application-householdContact-email">Email
+                            Address</label>
+                        <input type="text" id="email" class="form-control" placeholder="Email" />
+                    </div>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div class="centered-row">
+                <div class="centered-col">
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="homePhone" i18n="@@application-householdContact-homePhone">Home
+                            Phone</label>
+                        <input type="text" id="homePhone" class="form-control" placeholder="Home Phone Number" />
+                    </div>
+                </div>
+                <div class="centered-col">
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="workPhone" i18n="@@application-householdContact-workPhone">Work
+                            Phone</label>
+                        <input type="text" id="workPhone" class="form-control" placeholder="Work Phone Number" />
+                    </div>
+                </div>
+            </div>
+            <div class="centered-row">
+                <div class="centered-col">
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="workPhone" i18n="@@application-householdContact-workPhone">Work
+                            Phone</label>
+                        <input type="text" id="workPhone" class="form-control" placeholder="Work Phone Number" />
+                    </div>
+                </div>
+                <div class="centered-col">
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="cellPhone" i18n="@@application-householdContact-cellPhone">Cell
+                            Phone</label>
+                        <input type="text" id="cellPhone" class="form-control" placeholder="Cell Phone Number" />
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <h3 i18n="@@application-householdContact-requestPhoneInterview">
+                <b>
+                    Do you request a phone interview?
+                </b>
+            </h3>
+            <fieldset>
+                <div class="toggle">
+                    <input type="radio" name="requestPhoneInterview" value="weight" id="requestPhoneInterviewYes"
+                        checked="checked" />
+                    <label for="requestPhoneInterviewYes">Yes</label>
+                    <input type="radio" name="requestPhoneInterview" value="dimensions" id="requestPhoneInterviewNo" />
+                    <label for="requestPhoneInterviewNo">No</label>
+                </div>
+            </fieldset>
+
+        </div>
+        <hr>
+        <div class="section">
+            <div class="centered-row">
+                <div class="centered-col">
+                    <button class="btn btn-secondary btn-lg button-left" (click)="ContinueToApplicant()">Go
+                        Back</button>
+                </div>
+                <div class="centered-col">
+                    <button class="btn btn-primary btn-lg" (click)="ContinueToQuestionnaire()">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #Household Questionarre -->
+<div class="row" *ngIf="showHouseholdQuestionnaire" id="questionnaire">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <br>
+            <h1 i18n="@@application-householdInfo-header" style="text-align: center;">
+                <b>
+                    Household Info
+                </b>
+            </h1>
+            <br>
+            <p i18n="@@application-householdInfo-pleaseAnswer" style="text-align: center;">
+                Please answer each question for anyone in your household, including yourself.
+            </p>
+            <br>
+            <div class="row">
+                <div class="col-2">
+                </div>
+                <div class="col-8">
+                    <p i18n="@@application-householdInfo-seasonalOrMigrantWorker">
+                        1. Is anyone in your household a seasonal or migrant worker?
+                    </p>
+                    <div class="row">
+                        <fieldset>
+                            <div class="toggle">
+                                <input type="radio" name="seasonalOrMigrantWorker" value="weight"
+                                    id="seasonalOrMigrantWorkerYes" checked="checked" />
+                                <label for="seasonalOrMigrantWorkerYes">Yes</label>
+                                <input type="radio" name="seasonalOrMigrantWorker" value="dimensions"
+                                    id="seasonalOrMigrantWorkerNo" />
+                                <label for="seasonalOrMigrantWorkerNo">No</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <p i18n="@@application-householdInfo-lessThan100Cash">
+                        2. Does your household have less than $100 in cash, checking and/or savings?
+                    </p>
+                    <div class="row">
+                        <fieldset>
+                            <div class="toggle">
+                                <input type="radio" name="lessThan100Cash" value="weight" id="lessThan100CashYes"
+                                    checked="checked" />
+                                <label for="lessThan100CashYes">Yes</label>
+                                <input type="radio" name="lessThan100Cash" value="dimensions" id="lessThan100CashNo" />
+                                <label for="lessThan100CashNo">No</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <p i18n="@@application-householdInfo-higherEducation">
+                        3. Is anyone enrolled in an institution of higher learning (Community College,
+                        University) at least half time?
+                    </p>
+                    <div class="row">
+                        <fieldset>
+                            <div class="toggle">
+                                <input type="radio" name="higherEducation" value="weight" id="higherEducationYes"
+                                    checked="checked" />
+                                <label for="higherEducationYes">Yes</label>
+                                <input type="radio" name="higherEducation" value="dimensions" id="higherEducationNo" />
+                                <label for="higherEducationNo">No</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <p i18n="@@application-householdInfo-striker">
+                        4. Is anyone in your household on strike?
+                    </p>
+                    <div class="row">
+                        <fieldset>
+                            <div class="toggle">
+                                <input type="radio" name="striker" value="weight" id="strikerYes" checked="checked" />
+                                <label for="strikerYes">Yes</label>
+                                <input type="radio" name="striker" value="dimensions" id="strikerNo" />
+                                <label for="strikerNo">No</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <p i18n="@@application-householdInfo-voluntarilyQuit">
+                        5. Has anyone voluntarily quit a job within the last 30 days?
+                    </p>
+                    <div class="row">
+                        <fieldset>
+                            <div class="toggle">
+                                <input type="radio" name="voluntarilyQuit" value="weight" id="voluntarilyQuitYes"
+                                    checked="checked" />
+                                <label for="voluntarilyQuitYes">Yes</label>
+                                <input type="radio" name="voluntarilyQuit" value="dimensions" id="voluntarilyQuitNo" />
+                                <label for="voluntarilyQuitNo">No</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <p i18n="@@application-householdInfo-roomOrMeals">
+                        6. Does anyone pay for room and/or meals?
+                    </p>
+                    <div class="row">
+                        <fieldset>
+                            <div class="toggle">
+                                <input type="radio" name="roomOrMeals" value="weight" id="roomOrMealsYes"
+                                    checked="checked" />
+                                <label for="roomOrMealsYes">Yes</label>
+                                <input type="radio" name="roomOrMeals" value="dimensions" id="roomOrMealsNo" />
+                                <label for="roomOrMealsNo">No</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <p i18n="@@application-householdInfo-disqualified">
+                        7. Has anyone in your household been disqualified for an intentional food
+                        assistance program violation?
+                    </p>
+                    <div class="row">
+                        <fieldset>
+                            <div class="toggle">
+                                <input type="radio" name="disqualified" value="weight" id="disqualifiedYes"
+                                    checked="checked" />
+                                <label for="disqualifiedYes">Yes</label>
+                                <input type="radio" name="disqualified" value="dimensions" id="disqualifiedNo" />
+                                <label for="disqualifiedNo">No</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <p i18n="@@application-householdInfo-guiltyBuyingOrSelling">
+                        8. Has anyone been found guilty by a court of buying or selling food assistance
+                        of $500 or more?
+                    </p>
+                    <div class="row">
+                        <fieldset>
+                            <div class="toggle">
+                                <input type="radio" name="guiltyBuyingOrSelling" value="weight"
+                                    id="guiltyBuyingOrSellingYes" checked="checked" />
+                                <label for="guiltyBuyingOrSellingYes">Yes</label>
+                                <input type="radio" name="guiltyBuyingOrSelling" value="dimensions"
+                                    id="guiltyBuyingOrSellingNo" />
+                                <label for="guiltyBuyingOrSellingNo">No</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <p i18n="@@application-householdInfo-guiltyFirearms">
+                        9. Has anyone been found guilty by a court of using food assistance to buy
+                        firearms, ammunition, or explosives?
+                    </p>
+                    <div class="row">
+                        <fieldset>
+                            <div class="toggle">
+                                <input type="radio" name="guiltyFirearms" value="weight" id="guiltyFirearmsYes"
+                                    checked="checked" />
+                                <label for="guiltyFirearmsYes">Yes</label>
+                                <input type="radio" name="guiltyFirearms" value="dimensions" id="guiltyFirearmsNo" />
+                                <label for="guiltyFirearmsNo">No</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <p i18n="@@application-householdInfo-misrepresentedIdentity">
+                        10. Has anyone fraudulently misrepresented identity or residence to get food
+                        assistance?
+                    </p>
+                    <div class="row">
+                        <fieldset>
+                            <div class="toggle">
+                                <input type="radio" name="misrepresentedIdentity" value="weight"
+                                    id="misrepresentedIdentityYes" checked="checked" />
+                                <label for="misrepresentedIdentityYes">Yes</label>
+                                <input type="radio" name="misrepresentedIdentity" value="dimensions"
+                                    id="misrepresentedIdentityNo" />
+                                <label for="misrepresentedIdentityNo">No</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <p i18n="@@application-householdInfo-felonyDrugs">
+                        11. Has anyone been convicted of a felony involving drugs after 8/22/1996?
+                    </p>
+                    <div class="row">
+                        <fieldset>
+                            <div class="toggle">
+                                <input type="radio" name="felonyDrugs" value="weight" id="felonyDrugsYes"
+                                    checked="checked" />
+                                <label for="felonyDrugsYes">Yes</label>
+                                <input type="radio" name="felonyDrugs" value="dimensions" id="felonyDrugsNo" />
+                                <label for="felonyDrugsNo">No</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <p i18n="@@application-householdInfo-felonParoleViolation">
+                        12. Is anyone a fleeing felon or parole/probation violation?
+                    </p>
+                    <div class="row">
+                        <fieldset>
+                            <div class="toggle">
+                                <input type="radio" name="felonParoleViolation" value="weight"
+                                    id="felonParoleViolationYes" checked="checked" />
+                                <label for="felonParoleViolationYes">Yes</label>
+                                <input type="radio" name="felonParoleViolation" value="dimensions"
+                                    id="felonParoleViolationNo" />
+                                <label for="felonParoleViolationNo">No</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <p i18n="@@application-householdInfo-duplicateSnapAssistance">
+                        13. Have you or any member of your household been convicted of fraudulently
+                        receiving duplicate SNAP/Food Assistance benefits in any state?
+                    </p>
+                    <div class="row">
+                        <fieldset>
+                            <div class="toggle">
+                                <input type="radio" name="duplicateSnapAssistance" value="weight"
+                                    id="duplicateSnapAssistanceYes" checked="checked" />
+                                <label for="duplicateSnapAssistanceYes">Yes</label>
+                                <input type="radio" name="duplicateSnapAssistance" value="dimensions"
+                                    id="duplicateSnapAssistanceNo" />
+                                <label for="duplicateSnapAssistanceNo">No</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="centered-row">
+                    <div class="centered-col">
+                        <button class="btn btn-secondary btn-lg button-left" (click)="ContinueToContact()">Go
+                            Back</button>
+                    </div>
+                    <div class="centered-col">
+                        <button class="btn btn-primary btn-lg" (click)="ContinueToHouseholdSize()">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #Household size -->
+<div class="row" *ngIf="showHouseholdSize" id="householdSize">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <br>
+            <h1 i18n="@@application-householdSize-header" style="text-align: center;">
+                <b>
+                    How many people are in your household, including yourself?
+                </b>
+            </h1>
+            <br>
+            <div class="row">
+                <div class="col-4">
+                    <ngx-number-spinner [value]="4" (change)="change($event)" [min]="1">
+                    </ngx-number-spinner>
+                </div>
+                <div class="col-8">
+                    <p i18n="@@application-householdSize-includeOnly">
+                        Include only people that are living in your home that purchase and prepare meals
+                        together.
+                    </p>
+                    <br>
+                    <p i18n="@@application-householdSize-ssnOnlyFor">
+                        You only have to give social security numbers (SSN) and citizenship/immigration
+                        information for those household members that you are asking for food assistance
+                        benefits. You will have to give information such as income for household members
+                        who are not seeking benefits to determine if the persons for whom you are
+                        applying are eligible to receive benefits.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="centered-row">
+                <div class="centered-col">
+                    <button class="btn btn-secondary btn-lg button-left" (click)="ContinueToQuestionnaire()">Go
+                        Back</button>
+                </div>
+                <div class="centered-col">
+                    <button class="btn btn-primary btn-lg" (click)="ContinueToHeadOfHousehold()">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #Head of Household -->
+<div class="row" *ngIf="showHeadOfHousehold" id="headOfHousehold">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <br>
+            <h1 i18n="@@application-headOfHousehold-header" style="text-align: center;">
+                <b>
+                    Head Of Household
+                </b>
+            </h1>
+            <br>
+            <p i18n="@@application-headOfHousehold-caseName" style="text-align: center;">
+                Food Assistance case will be listed under the name provided here. This person does NOT
+                have to be the owner of your home.
+            </p>
+            <form class="row g-3 needs-validation" novalidate>
+                <div class="col-md-4">
+                    <label for="validationCustom01" class="form-label">First
+                        Name</label>
+                    <input type="text" class="form-control" id="validationCustom01" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="validationCustom02" class="form-label">Middle</label>
+                    <input type="text" class="form-control" id="validationCustom02">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="validationCustom03" class="form-label">Last
+                        Name</label>
+                    <input type="text" class="form-control" id="validationCustom02" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="validationCustom04" class="form-label">Suffix</label>
+                    <select class="form-select" id="validationCustom04">
+                        <option selected disabled value="">
+                            Suffx</option>
+                        <option>Jr</option>
+                        <option>Sr</option>
+                        <option>III</option>
+                        <option>IV</option>
+                        <option>V</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="picker" placeholder="Date Of Birth">
+                        <mat-datepicker-toggle matSuffix [for]="picker">
+                        </mat-datepicker-toggle>
+                        <mat-datepicker #picker>
+                        </mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                    <label for="validationCustom03" class="form-label">Social Security Number</label>
+                    <input type="text" class="form-control" id="validationCustom02" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="section">
+            <div class="centered-row">
+                <div class="centered-col">
+                    <button class="btn btn-secondary btn-lg button-left" (click)="ContinueToHouseholdSize()">Go
+                        Back</button>
+                </div>
+                <div class="centered-col">
+                    <button class="btn btn-primary btn-lg" (click)="ContinueToTellUsMore()">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #Tell us more -->
+<div class="row" *ngIf="showTellUsMore" id="tellUsMore">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <br>
+            <h1 i18n="@@application-tellUsMore-header" style="text-align: center;">
+                <b>
+                    Tell Us More About Person
+                </b>
+            </h1>
+            <br>
+            <hr>
+
+            <h3 i18n="@@application-tellUsMore-whatSex" style="text-align: center;">
+                What sex is this person?
+            </h3>
+            <fieldset>
+                <div class="toggle">
+                    <input type="radio" name="sex" value="weight" id="sexMale" checked="checked" />
+                    <label for="sexMale">Male</label>
+                    <input type="radio" name="sex" value="dimensions" id="sexFemale" />
+                    <label for="sexFemale">Female</label>
+                </div>
+            </fieldset>
+
+            <hr>
+
+            <h3 i18n="@@application-tellUsMore-isUsCitizen" style="text-align: center;">
+                Is this person a US citizen?
+            </h3>
+            <fieldset>
+                <div class="toggle">
+                    <input type="radio" name="citizen" value="weight" id="usCitizenYes" checked="checked" />
+                    <label for="usCitizenYes">Yes</label>
+                    <input type="radio" name="citizen" value="dimensions" id="usCitizenNo" />
+                    <label for="usCitizenNo">No</label>
+                </div>
+            </fieldset>
+
+            <hr>
+            <div class="section">
+                <p i18n="@@application-tellUsMore-title6" style="text-align: center;">
+                    Title VI of the Civil Rights Act of 1964 allows us to ask for racial/ethnic information.
+                    You do not have to give us this information. If you do not want to give us this
+                    information, it will have no effect on your case and your worker will enter an answer.
+                </p>
+            </div>
+            <hr>
+            <h3 i18n="@@application-tellUsMore-bestDescribes">
+                Which best describes PERSON1?
+            </h3>
+            <p i18n="@@application-tellUsMore-ethnicity" style="text-align: center;">
+                Ethnicity
+            </p>
+            <div class="row">
+                <fieldset>
+                    <div class="toggle">
+                        <input type="radio" name="ethnicity" value="weight" id="ethnicityHispanicLatinoYes"
+                            checked="checked" />
+                        <label for="ethnicityHispanicLatinoYes">Hispanic or Latino</label>
+                        <input type="radio" name="ethnicity" value="dimensions" id="ethnicityHispanicLatinoNo" />
+                        <label for="ethnicityHispanicLatinoNo">Not Hispanic or Latino</label>
+                    </div>
+                </fieldset>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <p i18n="@@application-tellUsMore-race">
+                Race (Check all that apply)
+            </p>
+            <div class="row">
+                <div class="col-1">
+                </div>
+                <div class="col-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault"
+                            i18n="@@application-tellUsMore-indianNative">
+                            American Indian or Alaskan Native
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked" i18n="@@application-tellUsMore-asian">
+                            Asian
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked" i18n="@@application-tellUsMore-black">
+                            Black or African American
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked" i18n="@@application-tellUsMore-hawaiian">
+                            Native Hawaiian or Other Pacific Islander
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked" i18n="@@application-tellUsMore-white">
+                            White
+                        </label>
+                    </div>
+                </div>
+                <div class="col-1">
+                </div>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <p i18n="@@application-tellUsMore-satisfactoryImmigrationStatus">
+                Note: Only those who disclose their citizenship or establish satisfactory immigration
+                status will receive benefits if otherwise eligible. The decision not to furnish this
+                information will not affect the eligibility of the other household members. Information
+                on the immigration status of those who do not apply will not be verified with INS.
+                Parents who do not disclose their status may apply for their children. ALL HOUSEHOLD
+                MEMBERS MUST BE LISTED AND ALL QUESTIONS ANSWERED, EVEN FOR THOSE WHO ARE NOT DISCLOSING
+                CITIZENSHIP OR IMMIGRATION STATUS. The income of all members is considered regardless
+                whether or not they apply or are eligible.
+            </p>
+        </div>
+        <div class="section">
+            <div class="centered-row">
+                <div class="centered-col">
+                    <button class="btn btn-secondary btn-lg button-left" (click)="ContinueToHeadOfHousehold()">Go
+                        Back</button>
+                </div>
+                <div class="centered-col">
+                    <button class="btn btn-primary btn-lg" (click)="ContinueToAccountRep()">Continue</button>
+                </div>
+            </div>
+        </div>
+        <!-- <br>
+        <div class="d-grid gap-2 col-6 mx-auto" *ngIf="!showAccountRep">
+            <button type="button" class="btn btn-primary" (click)="continueToAccountRep()">Next</button>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto" *ngIf="showAccountRep && !editingHouseholdMember">
+            <button type="button" class="btn btn-secondary" (click)="editHouseholdMember()">Edit</button>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto" *ngIf="editingHouseholdMember">
+            <button type="button" class="btn btn-primary" (click)="saveHouseholdMember()">Save</button>
+        </div>
+        <br> -->
+    </div>
+</div>
+<!-- ##Account Rep -->
+<!--  -->
+<div class="row" *ngIf="showAccountRep" id="accountRep">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <br>
+            <h1 i18n="@@application-accountRep-header">
+                <b>
+                    Account Representatives
+                </b>
+            </h1>
+            <div class="section">
+                <h3 i18n="@@application-accountRep-authorization">
+                    AUTHORIZATION FOR A HOUSEHOLD REPRESENTATIVE</h3>
+            </div>
+            <div class="section">
+                <p i18n="@@application-accountRep-rights">
+                    You have the right to appoint someone to act on your household's behalf to use your EBT
+                    card to purchase food, and/or to complete the application process. It is your
+                    responsibility to inform this individual that he/she has been appointed as your
+                    household's representative. You are responsible for your representative's action in the
+                    use of your EBT card, even if the card is used without your specific knowledge or
+                    consent. You are responsible for any information given by your representative in the
+                    certification of your household for food assistance benefits. It is also your
+                    responsibility to inform your worker if you do not want this person to continue to act
+                    as a representative for your household. You may appoint one person for each
+                    responsibility or one person for both. You are not required to have a representative for
+                    either.
+                </p>
+            </div>
+            <hr>
+            <div class="section">
+                <h3 i18n="@@application-accountRep-authorizationToUseEBT">
+                    AUTHORIZATION TO USE EBT CARD TO PURCHASE FOOD</h3>
+            </div>
+            <div class="section">
+                <p i18n="@@application-accountRep-additionalCard">
+                    An additional EBT card in your representative's name along with a unique personal
+                    identification number (PIN) will allow complete access to all of your household's food
+                    assistance benefits. It is possible for this individual to spend your household's
+                    benefits with or without your specific consent or knowledge. If your representative uses
+                    your benefits inappropriately, benefits will not be replaced.
+                </p>
+            </div>
+            <p i18n="@@application-accountRep-additionalCard" style="text-align: center;">
+                Do you want to authorize someone to use the EBT card to purchase food for you?
+            </p>
+            <fieldset>
+                <div class="toggle">
+                    <input type="radio" name="additionalCard" value="weight" id="additionalCardYes" checked="checked" />
+                    <label for="additionalCardYes">Yes</label>
+                    <input type="radio" name="additionalCard" value="dimensions" id="additionalCardNo" />
+                    <label for="additionalCardNo">No</label>
+                </div>
+            </fieldset>
+            <br>
+            <hr>
+            <br>
+            <h3 i18n="@@application-accountRep-householdEligibility">
+                AUTHORIZATION FOR CERTIFICATION OF HOUSEHOLD ELIGIBILITY</h3>
+            <br>
+            <p i18n="@@application-accountRep-mustKnowInformation">
+                This individual must know your household's situation well enough to give any information
+                needed to determine eligibility for food assistance and is authorized to make
+                application, be interviewed, give information on behalf of your household for the
+                purpose of determining eligibility for the food assistance program. You are responsible
+                for any incorrect information given by your representative.
+            </p>
+            <p i18n="@@application-accountRep-authorizeSomeone" style="text-align: center;">
+                Do you want to authorize someone to be your representative for certification purposes?
+            </p>
+            <fieldset>
+                <div class="toggle">
+                    <input type="radio" name="authorizeSomeone" value="weight" id="authorizeSomeoneYes"
+                        checked="checked" />
+                    <label for="authorizeSomeoneYes">Yes</label>
+                    <input type="radio" name="authorizeSomeone" value="dimensions" id="authorizeSomeoneNo" />
+                    <label for="authorizeSomeoneNo">No</label>
+                </div>
+            </fieldset>
+            <div class="section">
+                <div class="centered-row">
+                    <div class="centered-col">
+                        <button class="btn btn-secondary btn-lg button-left" (click)="ContinueToTellUsMore()">Go
+                            Back</button>
+                    </div>
+                    <div class="centered-col">
+                        <button class="btn btn-primary btn-lg" (click)="ShowAvailableFunds()">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

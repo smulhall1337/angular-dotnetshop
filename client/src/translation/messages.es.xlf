@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="neededInformation-header" datatype="html">
+        <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/> Information Needed To Process An Application <x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
+        <target><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/> Información necesaria para procesar una solicitud <x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application/application.component.html</context>
+          <context context-type="linenumber">170,172</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="neededInformation-pleaseBring" datatype="html">
+        <source> Please bring as much of the following information as possible with you when you come for your interview. This will help us in processing your application faster. With your cooperation, the Food Assistance Office will help you obtain the necessary proof to process your application if you need further assistance. </source>
+        <target> Por favor traiga la mayor cantidad posible de la siguiente información cuando venga a la entrevista. Esto nos ayudará a procesar su solicitud más rápido. Con su cooperación, la Oficina de Asistencia Alimentaria lo ayudará a obtener las pruebas necesarias para procesar su solicitud si necesita más ayuda. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application/application.component.html</context>
+          <context context-type="linenumber">175,180</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="neededInformation-pleaseBring-proofOfIdentity" datatype="html">
+        <source> Proof of your identity (examples: birth certificate, driver&apos;s license, school ID) </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application/application.component.html</context>
+          <context context-type="linenumber">184,186</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="neededInformation-pleaseBring-nameDatesOfBirth" datatype="html">
+        <source> Names and dates of birth of all persons who live in your home. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application/application.component.html</context>
+          <context context-type="linenumber">187,189</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="neededInformation-pleaseBring-socialSecurity" datatype="html">
+        <source> Social Security Numbers for each household member. If an individual does not have a Social Security Number the Food Assistance Office will tell you how to apply for one. You only have to give social security numbers (SSN) and citizenship/immigration information for those household members that you are asking for food assistance benefits. You will have to give information such as income for household members who are not seeking benefits to determine if the persons for whom you are applying are eligible to receive benefits. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application/application.component.html</context>
+          <context context-type="linenumber">190,201</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="neededInformation-pleaseBring-payStubs" datatype="html">
+        <source> Current check stubs, pay slips, or employer&apos;s statements that show the gross amount of money paid to all working persons in the home. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application/application.component.html</context>
+          <context context-type="linenumber">202,206</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="importantInformation-Header" datatype="html">
+        <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/> Important Information <x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application/application.component.html</context>
+          <context context-type="linenumber">321,323</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="importantInformation-Privacy" datatype="html">
+        <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/> Privacy Statement <x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application/application.component.html</context>
+          <context context-type="linenumber">327,329</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="importantInformation-Collection" datatype="html">
+        <source> The collection of this information is authorized under the Food and Nutrition Act, as amended. The information will be used to determine whether your household is eligible or continues to be eligible to participate in the program. We will verify this information through computer matching programs. We will also use this information to monitor compliance with program regulations and for program management. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application/application.component.html</context>
+          <context context-type="linenumber">332,334</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

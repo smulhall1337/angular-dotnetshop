@@ -1,0 +1,191 @@
+<!-- coming up... -->
+<div class="row" id="income" *ngIf="showIncome">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <img src='../../assets/images/Large/incomeheader_large.png'>
+            <div class="row">
+                <div class="col-8">
+                    <h3 i18n="@@application-income-comingUp">
+                        <b>
+                            Coming up in this section
+                        </b>
+                    </h3>
+                    <hr>
+                    <p i18n="@@application-income-inThisSection">
+                        In this section, you will be asked about all of your sources of income so we can
+                        determine your full household income.
+                    </p>
+                </div>
+                <div class="col-4">
+                    <h3 i18n="@@application-income-youMayNeed">
+                        <b>
+                            You May Need
+                        </b>
+                    </h3>
+                    <hr>
+                    <p i18n="@@application-income-payStubs">
+                        Current Check Stubs / Pay Slips
+                    </p>
+                    <p i18n="@@application-income-socialSecurity">
+                        Statements from Social Security, VA, Workman's Comp
+                    </p>
+                </div>
+            </div>
+            <div class="section">
+                <div class="centered-row">
+                    <div class="centered-col">
+                        <button class="btn btn-secondary btn-lg button-left" (click)="ShowAvailableFunds()">Back To
+                            Available Funds</button>
+                    </div>
+                    <div class="centered-col">
+                        <button class="btn btn-primary btn-lg" (click)="ContinueToJobIncome()">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Job Income -->
+<div class="row" *ngIf="showJobIncome" id="jobIncome">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <h1 i18n="@@application-income-jobIncome">
+                <b>
+                    Job Income
+                </b>
+            </h1>
+            <div class="row">
+                <p i18n="@@application-income-jobIncomeQuestion" style="text-align: center;">
+                    <b>
+                        Is anyone in your household working?
+                    </b>
+                </p>
+                <fieldset>
+                    <div class="toggle">
+                        <input type="radio" name="jobIncome" value="weight" id="jobIncomeYes" checked="checked" />
+                        <label for="jobIncomeYes">Yes</label>
+                        <input type="radio" name="jobIncome" value="dimensions" id="jobIncomeNo" />
+                        <label for="jobIncomeNo">No</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="centered-row">
+                <div class="centered-col">
+                    <button class="btn btn-secondary btn-lg button-left" (click)="ShowIncome()">Go Back</button>
+                </div>
+                <div class="centered-col">
+                    <button class="btn btn-primary btn-lg" (click)="ContinueToSelfEmploymentIncome()">Continue</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Self Employment Income -->
+<div class="row" *ngIf="showSelfEmploymentIncome" id="selfEmploymentIncome">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <h1 i18n="@@application-income-selfEmployment">
+                <b>
+                    Self Employment Income
+                </b>
+            </h1>
+            <div class="row">
+                <p i18n="@@application-income-selfEmploymentQuestion" style="text-align: center;">
+                    <b>
+                        Is anyone in your household self-employed?
+                    </b>
+                </p>
+                <fieldset>
+                    <div class="toggle">
+                        <input type="radio" name="jobIncome" value="weight" id="jobIncomeYes" checked="checked" />
+                        <label for="jobIncomeYes">Yes</label>
+                        <input type="radio" name="jobIncome" value="dimensions" id="jobIncomeNo" />
+                        <label for="jobIncomeNo">No</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="centered-row">
+                <div class="centered-col">
+                    <button class="btn btn-secondary btn-lg button-left" (click)="ContinueToJobIncome()">Go
+                        Back</button>
+                </div>
+                <div class="centered-col">
+                    <button class="btn btn-primary btn-lg" (click)="ContinueToRoomAndBoard()">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Room and board -->
+<div class="row" *ngIf="showRoomAndBoard" id="roomAndBoardIncome">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <h1 i18n="@@application-income-roomAndBoard" style="text-align: center;">
+                <b>
+                    Room and Board Income
+                </b>
+            </h1>
+            <div class="row">
+                <p i18n="@@application-income-roomAndBoardQuestion" style="text-align: center;">
+                    <b>
+                        Does anyone pay you for meals, room, or both?
+                    </b>
+                </p>
+                <fieldset>
+                    <div class="toggle">
+                        <input type="radio" name="jobIncome" value="weight" id="jobIncomeYes" checked="checked" />
+                        <label for="jobIncomeYes">Yes</label>
+                        <input type="radio" name="jobIncome" value="dimensions" id="jobIncomeNo" />
+                        <label for="jobIncomeNo">No</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="centered-row">
+                <div class="centered-col">
+                    <button class="btn btn-secondary btn-lg button-left" (click)="ContinueToSelfEmploymentIncome()">Go
+                        Back</button>
+                </div>
+                <div class="centered-col">
+                    <button class="btn btn-primary btn-lg" (click)="ContinueToUnearnedIncome()">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- unearned -->
+<div class="row" *ngIf="showUnearnedIncome" id="unearnedIncome">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <h1 i18n="@@application-income-unearnedIncome" style="text-align: center;">
+                <b>
+                    Unearned Income
+                </b>
+            </h1>
+            <div class="row">
+                <p i18n="@@application-income-unearnedIncomeQuestion" style="text-align: center;">
+                    <b>
+                        Does anyone in your household receive unearned income such as TANF, Social Security, VA,
+                        Workman's Comp, Child Support, HUD Utility Assistance, or other?
+                    </b>
+                </p>
+                <fieldset>
+                    <div class="toggle">
+                        <input type="radio" name="jobIncome" value="weight" id="jobIncomeYes" checked="checked" />
+                        <label for="jobIncomeYes">Yes</label>
+                        <input type="radio" name="jobIncome" value="dimensions" id="jobIncomeNo" />
+                        <label for="jobIncomeNo">No</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="centered-row">
+                <div class="centered-col">
+                    <button class="btn btn-secondary btn-lg button left" (click)="ContinueToUnearnedIncome()">Go Back</button>
+                </div>
+                <div class="centered-col">
+                    <button class="btn btn-primary btn-lg" (click)="ContinueToExpenses()">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+
+<!-- 
+    TODO: 
+    1. Login validation
+    2. auto logout on no activity 
+    3. Add styling to CSS
+ -->
+<div id="jumbotron" class="col-md-12">
+    <p class=".d-none .d-sm-block">Start your application for Food Assistance.</p>
+    <!-- <p class=".d-block .d-sm-none">Alabama Food Assistance</p> -->
+    <a class="btn btn-success .d-none .d-sm-block float-sm-right">
+        Apply Now!
+        <i class="bi bi-chevron-right"></i>
+    </a>
+</div>
+<div class="container" style="padding: 0%;">
+    <div class="col-md-14">
+        <img src="../../assets/images/Large/banner_large.png" class="img-fluid" style="width: 100%;" />
+    </div>
+</div>
+<div class="container" style="padding: 0%; background-color: white;">
+    <div class="row justify-content-md-center">
+        <div class="col">
+            <div class="card-body p-4 p-lg-5 text-black">
+                <form>
+                    <div class="h5 fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</div>
+
+                    <div class="form-outline mb-4">
+                        <input type="email" id="username" class="form-control form-control-lg" />
+                        <label class="form-label" for="username" >Username</label>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input type="password" id="password" class="form-control form-control-lg" />
+                        <label class="form-label" for="password">Password</label>
+                    </div>
+                    <div class="pt-1 mb-4">
+                        <button class="btn btn-dark btn-lg btn-block" type="button" (click)="login()">Login</button>
+                    </div>
+                    <a class="small text-muted" href="#!">Forgot password?</a>
+                    <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have a MyDHR account? <a href="#!"
+                            style="color: #393f81;">Register here</a></p>
+                    <a href="#!" class="small text-muted">Terms of use.</a>
+                    <a href="#!" class="small text-muted">Privacy policy</a>
+                </form>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row" style="padding-top: 10%;">
+                <div class="h4 color1">Who We Are</div>
+                <p>
+                    The Food Assistance Division administers the Supplemental Nutrition Assistance Program (SNAP) in Alabama.  The Food Assistance Program's purpose is to end hunger and improve nutrition by providing monthly benefits to eligible low income households to help them buy the food they need for good health.
+                </p>
+            </div>
+            <div class="row" style="padding-top: 10%;">
+                <div class="h4 color2">How to apply</div>
+                <p>
+                    There are several ways to apply for food assistance. To apply for food assistance benefits online, you can apply via MyDHR or MyAlabama. Before you can complete the application online, you must first register for an account. Your completed application will be sent to the DHR office in the county where you live. You may also fax, mail, or bring the signed application to your County DHR office for processing. Click  here  to find the Food Assistance office nearest you.
+                </p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row" style="padding-top: 10%;">
+                <div class="h4 color3">Learn More</div>
+                <p>
+                    The Food Assistance Division administers the Supplemental Nutrition Assistance Program (SNAP) in Alabama.  The Food Assistance Program's purpose is to end hunger and improve nutrition by providing monthly benefits to eligible low income households to help them buy the food they need for good health.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

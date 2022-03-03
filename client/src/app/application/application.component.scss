@@ -1,0 +1,324 @@
+@use "../register/register.component.scss"; // used by application-complete
+@use "./radio-buttons.scss";
+@use "./nav-button.scss";
+@use "./preamble.scss";
+@use "./lexisNexis-modal.component.scss";
+// ----------------------------------------------------- -----------
+// my stuff
+// ----------------------------------------------------------------
+
+// Application
+.content-card {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  margin-top: 40px;
+  background-color: white;
+}
+.content-card img {
+  margin: auto;
+  display: block;
+}
+
+.form {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.header-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.centered-row {
+  margin: 15px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.centered-col {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin: auto;
+  display: block;
+}
+
+.card {
+  padding: 1rem;
+  border: 1px solid;
+}
+
+.preamble-colored-header {
+  background-color: #1278b8;
+}
+.preamble-header-h1{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}
+
+.navbar-hr {
+  border: 5px solid #1278b8;
+}
+
+.section {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+h1 {
+  color: #333333;
+  font-family: 'merriweather', serif;
+  font-size: 50px;
+  font-weight: normal;
+  line-height: 54px;
+  margin: 15 0 15px;
+  text-align: center;
+}
+
+h3 {
+  color: #333333;
+  ffont-family: 'merriweather', serif;
+  font-size: 30px;
+  font-weight: lighter;
+  line-height: 54px;
+  margin: 0 0 15px;
+  text-align: center;
+}
+
+p, li {
+  color: #333333;
+  font-family: 'merriweather', serif;
+  font-size: 18px;
+  line-height: 28px;
+  margin: 0 0 10px;
+}
+
+
+@media all and (min-width: 768px) {
+  tr  {
+    td {
+      vertical-align: middle !important;
+    }
+    span {
+      &:not([class]) {
+        padding: 1rem 1rem;
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------------------
+// Forms
+// ----------------------------------------------------------------
+.form-body {
+  display: flex;
+  justify-content: center;
+}
+.form-wrapper {
+  margin-top: 5%;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  -webkit-box-shadow: 9px 13px 25px 0px rgba(0, 0, 0, 0.18);
+  -moz-box-shadow: 9px 13px 25px 0px rgba(0, 0, 0, 0.18);
+  box-shadow: 9px 13px 25px 0px rgba(0, 0, 0, 0.18);
+}
+
+.form-container {
+  width: 65%;
+  padding: 5% 10%;
+}
+
+.address-info {
+  display: flex;
+  justify-content: space-between;
+
+  div {
+    width: 30%;
+  }
+}
+.street,
+.cc-num {
+  text-align: center;
+}
+
+input {
+  margin: 5px 0;
+  min-height: 30px;
+}
+
+// ----------------------------------------------------------------
+// Radio Buttons
+// ----------------------------------------------------------------
+.radio-container {
+  display: grid;
+  height: 100%;
+  place-items: center;
+  font-family: "Lato", sans-serif;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Lato:400,500,600,700&display=swap");
+.wrapper {
+  display: flex;
+  background: #fff;
+  height: 100px;
+  width: 400px;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  padding: 20px 15px;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+}
+.wrapper .option {
+  background: #fff;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0 10px;
+  border: 2px solid lightgrey;
+  transition: all 0.3s ease;
+}
+.wrapper .option .dot {
+  height: 20px;
+  width: 20px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  position: relative;
+}
+.wrapper .option .dot::before {
+  position: absolute;
+  content: "";
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  background: #0069d9;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(1.5);
+  transition: all 0.3s ease;
+}
+input[type="radio"] {
+  display: none;
+}
+input:checked:checked ~ .option-1,
+input:checked:checked ~ .option-2 {
+  border-color: #0069d9;
+  background: #0069d9;
+}
+input:checked:checked ~ .option-1 .dot,
+input:checked:checked ~ .option-2 .dot {
+  background: #fff;
+}
+input:checked:checked ~ .option-1 .dot::before,
+input:checked:checked ~ .option-2 .dot::before {
+  opacity: 1;
+  transform: scale(1);
+}
+input:checked:checked ~ .option-1 span,
+input:checked:checked ~ .option-2 span {
+  color: #fff;
+}
+
+.wrapper .option span {
+  font-size: 20px;
+  color: #808080;
+}
+
+// ----------------------------------------------------------------
+// copied and pasted stuff
+// ----------------------------------------------------------------
+.value-button {
+  display: inline-block;
+  border: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 11px 0;
+  background: #eee;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.value-button:hover {
+  cursor: pointer;
+}
+
+form #decrease {
+  margin-right: -4px;
+  border-radius: 8px 0 0 8px;
+}
+
+form #increase {
+  margin-left: -4px;
+  border-radius: 0 8px 8px 0;
+}
+
+form #input-wrap {
+  margin: 0px;
+  padding: 0px;
+}
+
+input#number {
+  text-align: center;
+  border: none;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height: 40px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.nested-scroll-window {
+  padding: 1.5rem;
+  margin: 1%;
+  border-width: 0.2rem;
+}
+
+.scrollspy-example {
+  position: relative;
+  height: 200px;
+  overflow: auto;
+  border: slategrey;
+}
+
+.card-paragraph {
+  margin: 1%;
+  &b {
+    font-weight: bold;
+  }
+}
+
+.multi-item-card {
+  margin-left: 2;
+}
+
+ol.d {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+
+li {
+  margin: 10px 0;
+}

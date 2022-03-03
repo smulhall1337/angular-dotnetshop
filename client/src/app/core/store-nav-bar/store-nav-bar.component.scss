@@ -1,0 +1,32 @@
+.cart-number {
+  position: absolute;
+  min-height: 25px;
+  min-width: 25px;
+  font-size: 1em;
+  border-radius: 50%;
+  background: blue;
+  color: white;
+  text-align: center;
+  top: -12px;
+  right: 32px;
+}
+
+a {
+  text-decoration: none;
+  color: #343a40;
+
+  &.active{
+    // & adds an additional style, in this case when a is active
+    // make sure this isnt a space between & and .active
+    color: orange;
+  }
+}
+
+.logo {
+  cursor: pointer;
+
+  &:focus{
+    //override the focus attribute, have the picture not have an outline
+    outline: none;
+  }
+}

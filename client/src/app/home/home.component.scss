@@ -1,0 +1,312 @@
+/**
+* TODO: 
+* 1. Clean up anything in here thats unused
+*/
+
+
+/* Learn More */
+.view-container {
+    background-color: white;
+}
+.view-body{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.learnMore-section-title{
+    color: rgb(153, 0, 51);
+}
+.section{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.line{
+    height: 4px;
+    color: rgb(153, 0, 51);
+}
+
+h1 {
+    color: #333333;
+    font-family: 'merriweather', serif;
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 54px;
+    margin: 15 0 15px;
+  }
+  
+  h2 {
+    color: #333333;
+    font-family: 'merriweather', serif;
+    font-size: 40px;
+    font-weight: normal;
+    line-height: 54px;
+    margin: 15 0 15px;
+  }
+
+  h3 {
+    color: #333333;
+    font-family: 'merriweather', serif;
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 54px;
+    margin: 0 0 15px;
+    text-align: center;
+  }
+
+/* ------------------------------------------------------------- */
+
+/* Get Assistance */
+
+.getAssistance-section-title{
+    color: #ff9900;
+}
+
+.getAssistance-line{
+    height: 4px;
+    color: #ff9900;
+}
+
+/* -------------------------------------------------------------- */
+
+
+/* Sign in create account*/
+
+.signin-line{
+    height: 4px;
+    color: #0e9d93;
+}
+
+
+/* -------------------------------------------------------------- */
+
+
+
+/*Front page*/
+#loading {
+    margin: 0px;
+    margin-bottom: 3px;
+}
+
+.spacer {
+    background-color: white;
+}
+
+.form-signin-heading {
+    line-height: 22px;
+}
+
+
+.banner,
+#jumbotron,
+.content {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media (min-width: 768px) {
+    .banner,
+    #jumbotron,
+    .content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.body {
+    padding-left: 45px;
+    padding-right: 30px;
+    padding-bottom: 185px; /*30px;*/
+    /*width: 958px;*/
+}
+
+p.error,
+label.error {
+    color: #F02626;
+}
+
+
+input.error,
+select.error,
+textarea.error {
+    color: #000000;
+    border-color: #F02626;
+}
+
+    input.error:focus,
+    select.error:focus,
+    textarea.error:focus {
+        border-color: #F02626;
+        -webkit-box-shadow: 0 0 6px #d59392;
+        -moz-box-shadow: 0 0 6px #d59392;
+        box-shadow: 0 0 6px #d59392;
+    }
+
+.row .body {
+    border-left: none;
+    background-color: #f5f5f5; /*#DDD;*/
+    margin-top: -1px;
+    /*width: 898px;*/
+}
+
+.color1 {
+    color: #96b100;
+}
+
+.color2 {
+    color: #49b8c7;
+}
+
+.color3 {
+    color: #8D5A2A;
+}
+
+.sign-in {
+    padding-left: 28px;
+    padding-right: 22px;
+}
+
+.sign-in-box {
+    border: 1px solid #838383;
+    padding: 0px 10px 10px;
+    top: -32px;
+    position: relative;
+    background-color: white;
+    box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
+}
+
+    .sign-in-box input[type=text], input[type=password] {
+        height: 40px;
+        font-size: 20px;
+        line-height: 30px;
+        margin: 0 0 8px 0;
+    }
+
+    .sign-in-box img {
+        margin: 29px;
+    }
+
+    .sign-in-box .btn {
+        height: 36px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .sign-in-box input[type=checkbox] {
+        margin-bottom: 25px;
+    }
+
+    .showpasswordlabel {
+        margin: 0 0 0 15px;
+        display: flex;
+        /*height: 30px;*/
+    }
+
+    .forgot-password-link {
+        cursor: pointer;
+    }
+
+p, a{
+    font-family: 'merriweather', serif;
+}
+#jumbotron {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #1278B8;
+    float: left;
+    width: 100%;
+    /*height: 60px;*/
+}
+
+    #jumbotron p {
+        font-family: 'merriweather', serif;
+        font-size: 21px;
+        color: white;
+        float: left;
+        /*height: 60px;*/
+        /*margin-bottom: 8px;*/
+        /*line-height: 64px;*/
+        margin-left: 15px;
+        /*margin-top: 10px;*/
+    }
+
+@media (min-width: 768px) {
+    #jumbotron p {
+        font-size: 30px;
+        margin-bottom: 0;
+    }
+
+    #jumbotron {
+        float: none;
+    }
+}
+
+#jumbotron .btn {
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #487CAB;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    margin: 13px 30px 13px 25px;
+    line-height: normal;
+}
+
+#jumbotron i {
+    padding-top: 4px;
+}
+
+#jumbotron .btn:hover {
+    color: #fff;
+    text-decoration: none;
+    -webkit-transition: background-position 0.5s linear;
+    -moz-transition: background-position 0.51s linear;
+    -o-transition: background-position 0.51s linear;
+    transition: background-position 0.51s linear;
+}
+
+#jumbotron .btn-success {
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #396187;
+    *background-color: #396187;
+    background-image: -moz-linear-gradient(top, #1278B8, #396187);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#1278B8), to(#396187));
+    background-image: -webkit-linear-gradient(top, #1278B8, #396187);
+    background-image: -o-linear-gradient(top, #1278B8, #396187);
+    background-image: linear-gradient(to bottom, #1278B8, #396187);
+    background-repeat: repeat-x;
+    border-color: #51a351 #51a351 #387038;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1278B8', endColorstr='#396187', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+    #jumbotron .btn-success:hover,
+    #jumbotron .btn-success:active,
+    #jumbotron .btn-success.active,
+    #jumbotron .btn-success.disabled,
+    #jumbotron .btn-success[disabled] {
+        color: #ffffff;
+        background-color: #1278B8;
+        *background-color: #1278B8;
+        background-image: -moz-linear-gradient(top, #396187, #1278B8);
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#396187), to(#1278B8));
+        background-image: -webkit-linear-gradient(top, #396187, #1278B8);
+        background-image: -o-linear-gradient(top, #396187, #1278B8);
+        background-image: linear-gradient(to bottom, #396187, #1278B8);
+        background-repeat: repeat-x;
+        border-color: #51a351 #51a351 #387038;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF396187', endColorstr='#FF1278B8', GradientType=0);
+        filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+        background-color: #1278B8;
+        *background-color: #1278B8;
+    }
+
+    #jumbotron .btn-success:active,
+    #jumbotron .btn-success.active {
+        background-color: #1278B8;
+    }

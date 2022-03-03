@@ -1,0 +1,627 @@
+<div class="row" id='summary' *ngIf="showSummary">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <img src='../../assets/images/Large/summaryheader_large.png'>
+            <div class="row">
+                <h3 i18n="@@application-summary-comingUp">
+                    <b>
+                        Coming up in this section
+                    </b>
+                </h3>
+                <hr>
+                <br>
+                <p i18n="@@application-summary-inThisSection">
+                    In this section, you will review your application for completeness and accuracy. Once
+                    you finish your review, you can give your e-signature and file your application. Your
+                    application will be submitted to the nearest DHR Food Assistance Office in the county
+                    you selected as your county of residency. If all members of your household are 60 years
+                    of age and older with no earned income, the application will be sent to Alabama Elderly
+                    Simplified Assistance Project (AESAP) for processing. You can also print a copy of your
+                    application for your records.
+                </p>
+                <br>
+            </div>
+            <div class="section">
+                <div class="centered-row">
+                    <div class="centered-col">
+                        <button class="btn btn-secondary btn-lg button-left" (click)="ShowExpenses()">Go Back</button>
+                    </div>
+                    <div class="centered-col">
+                        <button class="btn btn-primary btn-lg" (click)="ContinueToLifeline()">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Lifeline -->
+<div class="row" *ngIf="showLifeline" id="lifeLine">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <br>
+            <h1 i18n="@@application-lifeLine-header">
+                <b>
+                    Life Line
+                </b>
+            </h1>
+            <br>
+            <p i18n="@@application-lifeLine-description">
+                LIFELINE provides a discount on the cost of monthly telephone service if you qualify for the
+                service. If you need help paying for phone service and are approved for food assistance, we
+                can share your name, address, telephone number, and the last four digits of your social
+                security number with the Alabama Public Service Commission (PSC) and telecommunication
+                companies for the purpose of potential LIFELINE enrollment. Do you agree for Food Assistance
+                to furnish your information to PSC?
+            </p>
+            <br>
+            <p i18n="@@application-lifeLine-doYouAccept" style="text-align: center;">
+                Do you accept?
+            </p>
+            <fieldset>
+                <div class="toggle">
+                    <input type="radio" name="lifeLine" value="weight" id="lifeLineYes" checked="checked" />
+                    <label for="lifeLineYes">Yes</label>
+                    <input type="radio" name="lifeLine" value="dimensions" id="lifeLineNo" />
+                    <label for="lifeLineNo">No</label>
+                </div>
+            </fieldset>
+            <div class="centered-row">
+                <div class="centered-col">
+                    <button class="btn btn-secondary btn-lg button-left" (click)="ShowSummary()">Go Back</button>
+                </div>
+                <div class="centered-col">
+                    <button class="btn btn-primary btn-lg" (click)="ContinueToLocation()">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Location -->
+<div class="row" *ngIf="showLocation" id="location">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <h1 i18n="@@application-loaction-header" style="text-align: center;">
+                <b>
+                    Location
+                </b>
+            </h1>
+            <p i18n="@@application-loaction-whereCompleted" style="text-align: center;">
+                Where did you complete this online application?
+            </p>
+            <div class="col-10 mx-auto">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="1">Home
+                    </option>
+                    <option value="2">A Friends House</option>
+                    <option value="3">Work
+                    </option>
+                    <option value="4">Library
+                    </option>
+                    <option value="5">Food Assistance Office
+                    </option>
+                    <option value="6">Other Public Computer</option>
+                </select>
+            </div>
+            <div class="centered-row">
+                <div class="centered-col">
+                    <button class="btn btn-secondary btn-lg button-left" (click)="ContinueToLifeline()">Go Back</button>
+                </div>
+                <div class="centered-col">
+                    <button class="btn btn-primary btn-lg" (click)="ContinueToStatementOfUnderstanding()">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Statement Of Understanding -->
+<div class="row" *ngIf="showStatementOfUnderstanding" id="statementOfUnderstanding">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <br>
+            <div class="border" style="margin: 2%">
+                <h1 i18n="@@application-statementOfUnderstanding-header">
+                    <b>
+                        Statement Of Understanding
+                    </b>
+                </h1>
+                <div class="card-paragraph" i18n="@@application-statementOfUnderstanding-text">
+                    To receive food assistance benefits, my household must follow all the rules. If any
+                    member
+                    breaks any of these rules on purpose s/he can be barred from receiving food assistance
+                    benefits from 12 months to permanently. A court can also order the individual off the
+                    program for an additional 18 months. In addition, s/he can be fined up to $250,000,
+                    imprisoned up to 20 years or both. S/he may also be subject to prosecution under the
+                    applicable State and Federal laws. If you are found to have used or received benefits in
+                    a
+                    transaction involving the sale of firearms, ammunition or explosives, you will be
+                    permanently ineligible to receive SNAP benefits upon the first occasion of such
+                    violation.
+                    If you have been found guilty of having trafficked benefits for an aggregate amount of
+                    $500
+                    or more, you will be permanently ineligible to receive SNAP benefits upon the first
+                    occasion
+                    of such violation. If you have been found to have made a fraudulent statement or
+                    representation with respect to your identity of place of residence in order to receive
+                    multiple SNAP benefits simultaneously, you will be ineligible to participate in the
+                    program
+                    for a period of 10 years. If you are fleeing to avoid prosecution, custody, or
+                    confinement,
+                    after conviction for a crime or an attempt to commit a crime, which is a felony, or are
+                    in
+                    violation of probation or parole imposed under a federal or state law, you are
+                    ineligible
+                    for food assistance. If you are convicted of using or receiving food assistance benefits
+                    in
+                    a transaction involving the sale of a controlled substance, you will be ineligible for
+                    24
+                    months for the first violation and permanently for the second violation. If you are
+                    convicted of a federal or state felony that has an element of possession, use, or
+                    distribution of a controlled substance, you are ineligible for food assistance. If a
+                    court
+                    of law finds you guilty of using or receiving benefits in a transaction involving the
+                    sale
+                    of a controlled substance, you will not be eligible for benefits for two years for the
+                    first
+                    offense and permanently for the second offense. Do not trade or sell food assistance
+                    benefits or EBT cards. Do not use food assistance benefits to buy nonfood items, such as
+                    alcohol or cigarettes, or to pay on credit accounts. Do not purchase food on credit with
+                    SNAP benefits. Do not use someone else’s food assistance benefits, identification card
+                    or
+                    EBT card for your household. Do not give false information or hide information to get or
+                    continue to get food assistance benefits. Any person authorized to act on behalf of my
+                    household may be barred from participation as a representative for up to one year or may
+                    be
+                    subject to fines and/or prosecution if s/he breaks any rules on purpose.
+                </div>
+                <p class="h3" style="text-align: center;" i18n="@@application-statementOfUnderstanding-agreement">
+                    <b>
+                        By signing this application, I am stating that everything is true and correct to the
+                        best of my knowledge. I am also stating that I understand and agree to the
+                        following:
+                    </b>
+                </p>
+                <br>
+                <hr>
+                <br>
+                <div class="nested-scroll-window">
+                    <div class="row">
+                        <div class="col">
+                            <div data-spy="scroll" class="scrollspy-example">
+                                <ol class="d">
+                                    <li>
+                                        I understand that information provided by me in connection with this
+                                        application for food assistance benefits will be subject to
+                                        verification
+                                        by federal, state and local officials to determine if such
+                                        information
+                                        is true. I further understand that if any such information is found
+                                        to
+                                        be untrue or incorrect, my application for food assistance benefits
+                                        may
+                                        be denied or terminated and I may be subject to criminal prosecution
+                                        for
+                                        knowingly providing incorrect information.
+                                    </li>
+                                    <li>
+                                        I understand the information given is needed to determine my
+                                        eligibility
+                                        for food assistance. I understand all information is confidential
+                                        and
+                                        any use or disclosure without my permission will be made only for
+                                        certain limited purposes allowed under State or Federal laws and
+                                        regulations. Such purposes include, but are not limited to
+                                        establishing
+                                        eligibility, determining benefit amounts, and for providing services
+                                        to
+                                        applicants and recipients.
+                                    </li>
+                                    <li>
+                                        I agree to provide information needed to determine eligibility for
+                                        my
+                                        household. I understand that I may have to provide documents to
+                                        prove
+                                        what I have said. I understand that if documents are not available,
+                                        I
+                                        have to give the name of a person or organization my food stamp
+                                        worker
+                                        may contact to obtain the necessary proof.
+                                    </li>
+                                    <li>
+                                        I certify to the best of my knowledge, under penalty of perjury,
+                                        that
+                                        all household members for whom benefits are being sought are U.S.
+                                        citizens or aliens legally admitted to the United States.
+                                    </li>
+                                    <li>
+                                        I understand the information given on this application will be
+                                        checked
+                                        by using the State Income and Eligibility Verification System, other
+                                        computer matching systems, program reviews and audits. In addition,
+                                        any
+                                        information given may also be checked by other Federal Aid Programs
+                                        and
+                                        Federally Aided State Programs such as school lunch, Family
+                                        Assistance,
+                                        and Medicaid. If any information is incorrect, my household may be
+                                        denied food assistance benefits. If I give false information on
+                                        purpose,
+                                        legal or administrative action may be taken against me. I may have
+                                        to
+                                        repay food assistance benefits I receive to which I am not entitled.
+                                    </li>
+                                    <li>
+                                        I understand that my household will be ineligible for benefits if I
+                                        refuse to cooperate in completing the application process or in
+                                        subsequent reviews of my eligibility including reviews resulting
+                                        from
+                                        reported changes, recertification, or as part of a State or Federal
+                                        Quality Control Review.
+                                    </li>
+                                    <li>
+                                        I understand that my signature on this application will serve as my
+                                        authorization for State and Federal Quality Control Reviewers to
+                                        verify
+                                        my household circumstances for food assistance eligibility purposes.
+                                    </li>
+                                    <li>
+                                        I understand the work requirements and that my household or a
+                                        household
+                                        member may be disqualified from receiving food assistance benefits
+                                        for
+                                        failure to cooperate.
+                                    </li>
+                                    <li>
+                                        I understand that if any member of my household voluntarily quits a
+                                        job
+                                        or reduces the number of hours s/he works without good cause, my
+                                        household or a household member may be disqualified from receiving
+                                        food
+                                        assistance benefits.
+                                    </li>
+                                    <li>
+                                        I understand that I may request a conference or a fair hearing if I
+                                        am
+                                        not satisfied with any decisions of the County Department. This
+                                        request
+                                        may be made orally or in writing. My case may be presented at the
+                                        hearing by any person I choose.
+                                    </li>
+                                    <li>
+                                        I understand that my household will not receive an increase in food
+                                        assistance benefits if anyone in my household fails to comply with
+                                        the
+                                        requirements of another means tested program (Family Assistance,
+                                        SSI).
+                                    </li>
+                                    <li>
+                                        I understand that my household will be ineligible for benefits if I
+                                        refuse to cooperate in completing the application process or in
+                                        subsequent reviews of my eligibility including reviews resulting
+                                        from
+                                        reported changes, recertification, or as part of a State or Federal
+                                        Quality Control Review.
+                                    </li>
+                                    <li>
+                                        I understand that some able bodied food stamp recipients will only
+                                        be
+                                        eligible to receive food assistance for 3 months in a 36 month
+                                        period,
+                                        unless they work 20 hours a week or participate in certain work and
+                                        training programs. I understand my worker will advise me if this
+                                        provision applies to anyone in my household.
+                                    </li>
+                                    <li>
+                                        I understand that I am not to: give false information or hide
+                                        information to get or continue to get food assistance benefits; use
+                                        someone else's food assistance benefits; or use food assistance
+                                        benefits
+                                        to buy ineligible items such as alcoholic drinks or tobacco.
+                                    </li>
+                                    <li>
+                                        I declare under penalty of perjury, that I have read or had read to
+                                        me
+                                        all statements on the application and the information is true and
+                                        correct to the best of my knowledge.
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="centered-row">
+                <div class="centered-col">
+                    <button class="btn btn-secondary btn-lg button-left" (click)="ContinueToLocation()">Go Back</button>
+                </div>
+                <div class="centered-col">
+                    <button class="btn btn-primary btn-lg" (click)="ContinueToFinalSummary()">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- final summary -->
+<div id="finalSummary" *ngIf="showFinalSummary">
+    <!--  -->
+    <div class="row">
+        <div class="content-card">
+            <div class="card-body" style="padding: 0%;">
+                <br>
+                <div class="border" style="margin: 2%">
+                    <p class="h1" i18n="@@application-summary-header" style="text-align: center;">
+                        <b>
+                            Summary
+                        </b>
+                    </p>
+                    <br>
+                    <div style="margin-left: 2%;">
+                        <p class="h3" style="color: darkgoldenrod;" i18n="@@application-summary-applicantInfo">
+                            Applicant Information
+                        </p>
+                        <div style="text-indent: 2em;">
+                            <b i18n="@@application-summary-name">Name:</b>
+                            APPLICANT-NAME
+                        </div>
+
+                        <br>
+                        <hr>
+                        <br>
+                    </div>
+                    <div style="margin-left: 2%; margin-right: 2%;">
+                        <p class="h3" style="color: darkgoldenrod;" i18n="@@application-summary-address">
+                            Address
+                        </p>
+                        <div style="text-indent: 2em;">
+                            <p>
+                                <b i18n="@@application-summary-homeAddress">Home
+                                    Address:</b>
+                                APPLICANT-HOME
+                            </p>
+                            <p>
+                                <b i18n="@@application-summary-mailingAddress">
+                                    Mailing Address:</b>
+                                APPLICANT-MAILING
+                            </p>
+                            <p>
+                                <b i18n="@@application-summary-email">Email
+                                    Address:</b>
+                                APPLICANT-EMAIL
+                            </p>
+                        </div>
+                        <br>
+                        <hr>
+                        <br>
+                        <p class="h3" style="color: darkgoldenrod;" i18n="@@application-summary-phoneNumbers">
+                            Phone Numbers
+                        </p>
+                        <div style="text-indent: 2em;">
+                            <p>
+                                <b i18n="@@application-summary-homePhone">Home Phone:</b>
+                                APPLICANT-PHONE
+                            </p>
+                        </div>
+                        <br>
+                        <hr>
+                        <br>
+                        <table class="table  table-striped">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">
+                                        #</th>
+                                    <th scope="col">
+                                        First</th>
+                                    <th scope="col">
+                                        Last</th>
+                                    <th scope="col">
+                                        Handle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">
+                                        1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        2</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <hr>
+                        <br>
+                        <p class="h3" style="color: darkgoldenrod;" i18n="@@application-summary-expenses">
+                            Expenses
+                        </p>
+                        <p class="h3" style="color: darkgoldenrod;" i18n="@@application-summary-expensesShelter">
+                            Shelter
+                        </p>
+                        <div style="text-indent: 2em;">
+                            <p>
+                                <b i18n="@@application-summary-expensesShelterOwnRent">Shelter:</b>
+                                Own/Rent
+                            </p>
+                        </div>
+                        <br>
+                        <p class="h3" style="color: darkgoldenrod;" i18n="@@application-summary-expensesUtilities">
+                            Utilities
+                        </p>
+                        <p i18n="@@application-summary-expensesBilledForHVAC">
+                            Household billed for Heating or Air Conditioning?
+                        </p>
+                        <div style="text-indent: 2em;">
+                            <p>
+                                <b>Yes/No</b>
+                            </p>
+                        </div>
+                        <br>
+                        <p i18n="@@application-summary-expensesLiheapPayment">
+                            Received a LIHEAP Payment?
+                        </p>
+                        <div style="text-indent: 2em;">
+                            <p>
+                                <b>Yes/No</b>
+                            </p>
+                            <br>
+                            <p>
+                                <b i18n="@@application-summary-expensesPhone">
+                                    Phone
+                                </b>
+                                Yes/No
+                            </p>
+                            <p>
+                                <b i18n="@@application-summary-expensesElectricity">
+                                    Electricity
+                                </b>
+                                Yes/No
+                            </p>
+                            <p>
+                                <b i18n="@@application-summary-expensesGas">
+                                    Gas
+                                </b>
+                                Yes/No
+                            </p>
+                            <p>
+                                <b i18n="@@application-summary-expensesOil">
+                                    Oil
+                                </b>
+                                Yes/No
+                            </p>
+                            <p>
+                                <b i18n="@@application-summary-expensesWater">
+                                    Water
+                                </b>
+                                Yes/No
+                            </p>
+                            <p>
+                                <b i18n="@@application-summary-expensesGarbage">
+                                    Garbage
+                                </b>
+                                Yes/No
+                            </p>
+                            <p>
+                                <b i18n="@@application-summary-expensesOther">
+                                    Other
+                                </b>
+                                Yes/No
+                            </p>
+                        </div>
+                        <br>
+                        <hr>
+                        <br>
+                        <p class="h3" style="color: darkgoldenrod;" i18n="@@application-summary-expensesOther">
+                            Other
+                        </p>
+                        <div style="text-indent: 2em;">
+                            <p>
+                                <b i18n="@@application-summary-expensesAcceptLifeLine">Accepts
+                                    LifeLine</b>
+                                Yes/No
+                            </p>
+                        </div>
+                        <div style="text-indent: 2em;">
+                            <p>
+                                <b i18n="@@application-summary-expensesCompletedAt">Completed
+                                    At</b>
+                                Yes/No
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="content-card">
+            <div class="card-body" style="padding: 0%;">
+                <br>
+                <div class="border" style="margin: 2%">
+                    <p class="h1" i18n="@@application-summary-applicantSignature" style="text-align: center;">
+                        <b>
+                            Applicant Signature
+                        </b>
+                    </p>
+                    <br>
+                    <div class="card-paragraph" i18n="@@application-summary-applicantSignatureText">
+                        Congratulations, you have made it through your application for Food Assistance. It
+                        is now time to provide your electronic signature. This application may be signed by
+                        the applicant or authorized representative.
+                    </div>
+                    <br>
+                    <div class="card-paragraph" i18n="@@application-summary-applicantSignatureIUnderstand">
+                        I understand that an electronic signature has the same legal effect and can be
+                        enforced in the same way as a written signature.
+                    </div>
+                    <br>
+                    <hr>
+                    <br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="iAgree">
+                        <label class="form-check-label" for="iAgree">
+                            By checking this box and typing my name below, I am electronically signing my
+                            application. I declare under penalty of perjury, that I have read or had read to
+                            me all statements on the application and the information is true and correct to
+                            the best of my knowledge.
+                        </label>
+                    </div>
+                    <div class="card-paragraph">
+                        <b i18n="@@application-summary-submittedOnWeekends">
+                            Applications submitted on weekends, holidays, and after 4:30pm on normal work
+                            days will be dated as received on the next work day.
+                        </b>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                        </div>
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label for="signature">First
+                                    First and Last Name and Suffix</label>
+                                <input type="email" class="form-control" id="signature" style="margin: 1%"
+                                    aria-describedby="emailHelp" placeholder="Signature">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="content-card">
+            <div class="card-body" style="padding: 0%;">
+                <br>
+                <div class="border" style="margin: 1%">
+                    <p class="h1" i18n="@@application-summary-submitApplication" style="text-align: center;">
+                        <b>
+                            Submit Application
+                        </b>
+                    </p>
+                    <br>
+                    <div class="card-paragraph" i18n="@@application-summary-submitApplicationContinue"
+                        style="margin: 1%">
+                        By continuing to the next screen, your application will be submitted to the State of
+                        Alabama Department of Human Resources. Once this is done, your application will be
+                        locked and you will be unable to make any changes. Please ensure that all
+                        information submitted in this application is accurate.
+                    </div>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <button type="button" class="btn btn-primary"><a href="/apply/complete">Submit</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

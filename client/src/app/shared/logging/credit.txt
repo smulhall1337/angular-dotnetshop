@@ -1,0 +1,6 @@
+All credit for the angular logging goes to:
+Paul D. Sheriff
+https://www.codemag.com/People/Bio/Paul%20D%20Sheriff
+https://www.codemag.com/article/1711021/Logging-in-Angular-Applications 
+
+Programmers like myself truly stand on the shoulders of giants

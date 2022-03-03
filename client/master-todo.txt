@@ -1,0 +1,2 @@
+Things TODO:
+1. Clean up massive amounts of <br> tags in application html components. replace with "seciton" css

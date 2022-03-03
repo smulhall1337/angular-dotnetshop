@@ -1,0 +1,322 @@
+<div class="row" id="expenses" *ngIf="showExpenses">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <img src='../../assets/images/Large/expensesheader_large.png'>
+            <div class="row">
+                <div class="col-8">
+                    <h3 i18n="@@application-expenses-comingUp">
+                        <b>
+                            Coming up in this section
+                        </b>
+                    </h3>
+                    <hr>
+                    <p i18n="@@application-expenses-inThisSection">
+
+                        In this section, you will be asked about expenses your household incurs. You will
+                        need to provide information of the place you live and the utilities you pay. You
+                        will also be asked about other expenses you may have.
+                    </p>
+                    <br>
+                    <p i18n="@@application-expenses-ifYouDontReport">
+                        <b>
+                            If you have expenses that you do not report and/or provide proof, you will not
+                            receive the deduction for the expense.
+                        </b>
+                    </p>
+                </div>
+                <div class="col-4">
+                    <h3 i18n="@@application-expenses-youMayNeed">
+                        <b>
+                            You May Need
+                        </b>
+                    </h3>
+                    <hr>
+                    <p i18n="@@application-expenses-propertyTax">
+                        Property Tax Notification
+                    </p>
+                    <p i18n="@@application-income-homeInsurace">
+                        Home Insurance Policy
+                    </p>
+                    <p i18n="@@application-income-utilityBills">
+                        Utility Bills
+                    </p>
+                </div>
+            </div>
+            <div class="centered-row">
+                <div class="centered-col">
+                    <button class="btn btn-secondary btn-lg button-left" (click)="ShowIncome()">Go Back</button>
+                </div>
+                <div class="centered-col">
+                    <button class="btn btn-primary btn-lg" (click)="ContinueToHouseholdDescription()">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Household Shelter description -->
+<div class="row" *ngIf="showHouseholdDescription" id="householdDescription">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <h1 i18n="@@application-expenses-householdShelter" style="text-align: center;">
+                <b>
+                    Household Shelter Description
+                </b>
+            </h1>
+            <div class="row">
+                <p i18n="@@application-expenses-householdShelterWarning" style="text-align: center;">
+                    <b>
+                        In order to receive a deduction for a specific expense, you must report it here and
+                        provide proof.
+                    </b>
+                </p>
+                <div class="col-10 mx-auto">
+                    <label for="ownOrRent" class="form-label" i18n="@@application-expenses-rentOrOwn">1.
+                        Do you own or rent the place you live?</label>
+                    <select class="form-select" id="ownOrRent">
+                        <option>Own</option>
+                        <option>Rent</option>
+                        <option>Buying</option>
+                        <option>Rent Free
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="row justify-items-center">
+                <div class="col-10 mx-auto">
+                    <label for="ownOrRent" class="form-label" i18n="@@application-expenses-describeHome">2.
+                        Please describe your shelter arrangement.</label>
+                    <select class="form-select" id="ownOrRent">
+                        <option>House</option>
+                        <option>Apartment
+                        </option>
+                        <option>Mobile Home
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="section">
+                <div class="centered-row">
+                    <div class="centered-col">
+                        <button class="btn btn-secondary btn-lg" (click)="ShowExpenses()">Go Back</button>
+                    </div>
+                    <div class="centered-col">
+                        <button class="btn btn-primary btn-lg" (click)="ContinueToUtilities()">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Utilities -->
+<div class="row" *ngIf="showUtilities" id="utilities">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <h1 i18n="@@application-expenses-utility">
+                <b>
+                    Utility Expenses
+                </b>
+            </h1>
+            <div class="row">
+                <p i18n="@@application-expenses-utilityDetails" style="text-align: center;">
+                    <b>
+                        Please provide details on your monthly utility expenses.
+                    </b>
+                </p>
+            </div>
+            <div class="row">
+                <p i18n="@@application-expenses-heatingAndAir" style="text-align: center;">
+                    <b>
+                        1. Is your household billed for heating or air conditioning?
+                    </b>
+                </p>
+                <fieldset>
+                    <div class="toggle">
+                        <input type="radio" name="heatingAndAir" value="weight" id="heatingAndAirYes"
+                            checked="checked" />
+                        <label for="heatingAndAirYes">Yes</label>
+                        <input type="radio" name="heatingAndAir" value="dimensions" id="heatingAndAirNo" />
+                        <label for="heatingAndAirNo">No</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="row">
+                <p i18n="@@application-expenses-energyAssistance" style="text-align: center;">
+                    <b>
+                        2. Has your household received or is it expecting to receive a Low Income Home
+                        Energy Assistance Program payment?
+                    </b>
+                </p>
+                <fieldset>
+                    <div class="toggle">
+                        <input type="radio" name="energyAssistance" value="weight" id="energyAssistanceYes"
+                            checked="checked" />
+                        <label for="energyAssistanceYes">Yes</label>
+                        <input type="radio" name="energyAssistance" value="dimensions" id="energyAssistanceNo" />
+                        <label for="energyAssistanceNo">No</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="row">
+                <p i18n="@@application-expenses-utilitiesPayingFor" style="text-align: center;">
+                    <b>
+                        3. Please check each of the following utilities you pay for if it is not included in
+                        your rent.
+                    </b>
+                </p>
+                <div class="col-10 mx-auto justify-content-center">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckTelephone">
+                        <label class="form-check-label" for="flexCheckTelephone"
+                            i18n="@@application-expenses-telephone">
+                            Telephone
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckElectricity">
+                        <label class="form-check-label" for="flexCheckElectricity"
+                            i18n="@@application-expenses-electricity">
+                            Electricity
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckGasCooking">
+                        <label class="form-check-label" for="flexCheckGasCooking"
+                            i18n="@@application-expenses-gasCooking">
+                            Gas for cooking
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckOilCooking">
+                        <label class="form-check-label" for="flexCheckOilCooking"
+                            i18n="@@application-expenses-oilCooking">
+                            Oil for cooking
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckWaterSewage">
+                        <label class="form-check-label" for="flexCheckWaterSewage"
+                            i18n="@@application-expenses-waterSewage">
+                            Water and Sewage
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckGarbage">
+                        <label class="form-check-label" for="flexCheckGarbage" i18n="@@application-expenses-garbage">
+                            Garbage
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckOtherUtilities">
+                        <label class="form-check-label" for="flexCheckOtherUtilities"
+                            i18n="@@application-expenses-other">
+                            Other Utilities
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <p i18n="@@application-expenses-anyoneElsePay" style="text-align: center;">
+                    <b>
+                        4. Does anyone else pay all or part of this expense?
+                    </b>
+                </p>
+                <fieldset>
+                    <div class="toggle">
+                        <input type="radio" name="anyoneElsePay" value="weight" id="anyoneElsePayYes"
+                            checked="checked" />
+                        <label for="anyoneElsePayYes">Yes</label>
+                        <input type="radio" name="anyoneElsePay" value="dimensions" id="anyoneElsePayNo" />
+                        <label for="anyoneElsePayNo">No</label>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="centered-row">
+                <div class="centered-col">
+                    <button class="btn btn-secondary btn-lg button-left" (click)="ContinueToHouseholdDescription()">Go
+                        Back</button>
+                </div>
+                <div class="centered-col">
+                    <button class="btn btn-primary btn-lg" (click)="ContinueToDependentCare()">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Dependent Care -->
+<div class="row" *ngIf="showDependentCare" id="dependentCare">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <h1 i18n="@@application-expenses-dependentCare" style="text-align: center;">
+                <b>
+                    Dependent Care Expenses
+                </b>
+            </h1>
+            <p i18n="@@application-expenses-dependentCareQuestion" style="text-align: center;">
+                Does anyone in your household pay for someone to babysit or care for a child or disabled
+                adult so that a household member can go to work, look for work, go to school or training?
+            </p>
+            <fieldset>
+                <div class="toggle">
+                    <input type="radio" name="dependentCare" value="weight" id="dependentCareYes" checked="checked" />
+                    <label for="dependentCareYes">Yes</label>
+                    <input type="radio" name="dependentCare" value="dimensions" id="dependentCareNo" />
+                    <label for="dependentCareNo">No</label>
+                </div>
+            </fieldset>
+            <div class="centered-row">
+                <div class="centered-col">
+                    <button class="btn btn-secondary btn-lg button-left" (click)="ContinueToUtilities()">Go
+                        Back</button>
+                </div>
+                <div class="centered-col">
+                    <button class="btn btn-primary btn-lg" (click)="ContinueToMedicalExpenses()">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Medical Expenses -->
+<div class="row" *ngIf="showMedicalExpenses" id="medicalExpenses">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <h1 i18n="@@application-expenses-medicalExpenses">
+                <b>
+                    Medical Expenses
+                </b>
+            </h1>
+            <p style="color: red; text-align: center;" i18n="@@application-expenses-sixtyOrOlder">
+                <b>
+                    DEDUCTIONS ARE GIVEN ONLY FOR HOUSEHOLD MEMBERS AGED 60 OR OLDER OR DISABLED.
+                </b>
+            </p>
+            <p i18n="@@application-expenses-medicalExpensesQuestion" style="text-align: center;">
+
+                Does anyone in your household pay out of pocket medical expenses for a family member over
+                age 60?
+
+            </p>
+            <fieldset>
+                <div class="toggle">
+                    <input type="radio" name="medicalExpenses" value="weight" id="medicalExpensesYes"
+                        checked="checked" />
+                    <label for="medicalExpensesYes">Yes</label>
+                    <input type="radio" name="medicalExpenses" value="dimensions" id="medicalExpensesNo" />
+                    <label for="medicalExpensesNo">No</label>
+                </div>
+            </fieldset>
+            <div class="centered-row">
+                <div class="centered-col">
+                    <button class="btn btn-secondary btn-lg" (click)="ContinueToDependentCare()">Go Back</button>
+                </div>
+                <div class="centered-col">
+                    <button class="btn btn-primary btn-lg" (click)="ContinueToSummary()">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

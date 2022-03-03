@@ -1,0 +1,408 @@
+<div class="row" id="availableFunds" *ngIf="showAvailableFunds">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <img src='../../assets/images/Large/availablefundsheader_large.png'>
+            <div class="section">
+                <div class="centered-row">
+                    <div class="centered-col">
+                        <button class="btn btn-secondary btn-lg button-left" (click)="ShowHousehold()">Go Back</button>
+                    </div>
+                    <div class="centered-col">
+                        <button class="btn btn-primary btn-lg" (click)="ContinueToCashOnHand()">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #cash on hand -->
+<div class="row" id="cashOnHand" *ngIf="showCashOnHand">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <div class="border" style="margin: 2%">
+                <!-- <form #cashOnHandForm="ngForm" (submit)="ContinueToSavingsAccounts()" novalidate> -->
+                <div class="section">
+                    <h1 i18n="@@application-availableFunds-cashOnHand">
+                        <b>
+                            Cash On Hand
+                        </b>
+                    </h1>
+                </div>
+                <div class="row">
+                    <h3 i18n="@@application-availableFunds-cashOnHandQuestion">
+                        <b>
+                            Does anyone in your household have access to cash on hand?
+                        </b>
+                    </h3>
+                    <fieldset>
+                        <div class="toggle">
+                            <input type="radio" name="cashOnHand" value="weight" id="cashOnHandYes" />
+                            <label for="cashOnHandYes">Yes</label>
+                            <input type="radio" name="cashOnHand" value="dimensions" id="cashOnHandNo" />
+                            <label for="cashOnHandNo">No</label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div id="table" class="table-editable">
+                    <span class="table-add float-right mb-3 mr-2">
+                        <a class="text-success" (click)="addCashOnHand()">
+                            <mdb-icon fas icon="plus" size="2x"></mdb-icon>
+                        </a>
+                    </span>
+                    <table class="table table-bordered table-responsive-md table-striped text-center">
+                        <tr>
+                            <th class="text-center">Person Name</th>
+                            
+                            <th class="text-center">Amount</th>
+                        </tr>
+                        <tr *ngFor="let person of cashOnHandList; let id = index">
+                            <td>
+                                <span (keyup)="changeCashOnHandValue(id, 'name', $event)" (blur)="updateCashOnHandList(id, 'name', $event)"
+                                    contenteditable="true">{{person.name}}</span>
+                            </td>
+                            <td>
+                                $ <span contenteditable="true" (keyup)="changeCashOnHandValue(id, 'amount', $event)"
+                                    (blur)="updateCashOnHandList(id, 'age', $event)">{{person.amount}}</span>
+                            </td>
+                            <td>
+                                <span class="table-remove">
+                                    <button type="button btn-rounded" mdbBtn color="danger" size="sm" class="my-0"
+                                        (click)="removeCashOnHand(id)">Remove</button>
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="section">
+                    <div class="centered-row">
+                        <div class="centered-col">
+                            <button class="btn btn-secondary btn-lg button-left"
+                                (click)="BackToAvailableFundsStart()">Go
+                                Back</button>
+                        </div>
+                        <div class="centered-col">
+                            <button class="btn btn-primary btn-lg"
+                                (click)="ContinueToSavingsAccounts()">Continue</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- </form> -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #savings accounts -->
+<div class="row" *ngIf="showSavingsAccounts" id="savingsAccounts">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <h1 i18n="@@application-availableFunds-savingsAccounts">
+                <b>
+                    Savings Accounts
+                </b>
+            </h1>
+            <div class="row">
+                <h3 i18n="@@application-availableFunds-savingsAccountsQuestion">
+                    <b>
+                        Does anyone in your household have a savings account?
+                    </b>
+                </h3>
+                <fieldset>
+                    <div class="toggle">
+                        <input type="radio" name="savingsAccounts" value="weight" id="savingsAccountsYes"
+                            checked="checked" />
+                        <label for="savingsAccountsYes">Yes</label>
+                        <input type="radio" name="savingsAccounts" value="dimensions" id="savingsAccountsNo" />
+                        <label for="savingsAccountsNo">No</label>
+                    </div>
+                </fieldset>
+                <div id="table" class="table-editable">
+                    <span class="table-add float-right mb-3 mr-2">
+                        <a class="text-success" (click)="addSavingsAccount()">
+                            <mdb-icon fas icon="plus" size="2x"></mdb-icon>
+                        </a>
+                    </span>
+                    <table class="table table-bordered table-responsive-md table-striped text-center">
+                        <tr>
+                            <th class="text-center">Person Name</th>
+                            <th class="text-center">Bank Name</th>
+                            <th class="text-center">Amount</th>
+                        </tr>
+                        <tr *ngFor="let person of SavingsAccountList; let id = index">
+                            <td>
+                                <span (keyup)="changeSavingsAccount(id, 'name', $event)" (blur)="updateSavingsAccountList(id, 'name', $event)"
+                                    contenteditable="true">{{person.name}}</span>
+                            </td>
+                            <td>
+                                $ <span contenteditable="true" (keyup)="changeCashOnHandValue(id, 'amount', $event)"
+                                    (blur)="updateCashOnHandList(id, 'age', $event)">{{person.bankName}}</span>
+                            </td>
+                            <td>
+                                $ <span contenteditable="true" (keyup)="changeSavingsAccount(id, 'amount', $event)"
+                                    (blur)="updateSavingsAccountList(id, 'age', $event)">{{person.amount}}</span>
+                            </td>
+                            <td>
+                                <span class="table-remove">
+                                    <button type="button btn-rounded" mdbBtn color="danger" size="sm" class="my-0"
+                                        (click)="removeSavingsAccount(id)">Remove</button>
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="centered-row">
+                <div class="centered-col">
+                    <button class="btn btn-secondary btn-lg button-left" (click)="ContinueToCashOnHand()">Go
+                        Back</button>
+                </div>
+                <div class="centered-col">
+                    <button class="btn btn-primary btn-lg" (click)="ContinueToCheckingAccounts()">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #checking accounts -->
+<div class="row" *ngIf="showCheckingAccounts" id="checkingAccounts">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <div class="section">
+                <h1 i18n="@@application-availableFunds-checkingAccounts">
+                    <b>
+                        Checking Accounts
+                    </b>
+                </h1>
+            </div>
+            <div class="row">
+                <h3 i18n="@@application-availableFunds-checkingAccountsQuestion">
+                    <b>
+                        Does anyone in your household have a checking account?
+                    </b>
+                </h3>
+                <fieldset>
+                    <div class="toggle">
+                        <input type="radio" name="checkingAccounts" value="weight" id="checkingAccountsYes"
+                            checked="checked" />
+                        <label for="checkingAccountsYes">Yes</label>
+                        <input type="radio" name="checkingAccounts" value="dimensions" id="checkingAccountsNo" />
+                        <label for="checkingAccountsNo">No</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="section">
+                <div class="centered-row">
+                    <div class="centered-col">
+                        <button class="btn btn-secondary btn-lg button-left" (click)="ContinueToSavingsAccounts()">Go
+                            Back</button>
+                    </div>
+                    <div class="centered-col">
+                        <button class="btn btn-primary btn-lg" (click)="ContinueToInvestments()">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #investments -->
+<div class="row" *ngIf="showInvestments" id="investments">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <div class="section">
+                <h1 i18n="@@application-availableFunds-investments" style="text-align: center;">
+                    <b>
+                        Investments
+                    </b>
+                </h1>
+            </div>
+            <div class="row">
+                <h3 i18n="@@application-availableFunds-investmentsQuestion">
+                    <b>
+                        Does anyone in your household have stocks, bonds, or a savings certificate (CD)?
+                    </b>
+                </h3>
+                <fieldset>
+                    <div class="toggle">
+                        <input type="radio" name="investments" value="weight" id="investmentsYes" checked="checked" />
+                        <label for="investmentsYes">Yes</label>
+                        <input type="radio" name="investments" value="dimensions" id="investmentsNo" />
+                        <label for="investmentsNo">No</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="section">
+                <div class="centered-row">
+                    <div class="centered-col">
+                        <button class="btn btn-secondary btn-lg button-left" (click)="ContinueToCheckingAccounts()">Go
+                            Back</button>
+                    </div>
+                    <div class="centered-col">
+                        <button class="btn btn-primary btn-lg"
+                            (click)="ContinueToRetirementAccounts()">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #retirement accounts -->
+<div class="row" *ngIf="showRetirementAccounts" id="retirementAccounts">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <div class="section">
+                <h1 i18n="@@application-availableFunds-retirement" style="text-align: center;">
+                    <b>
+                        Retirement Accounts
+                    </b>
+                </h1>
+            </div>
+            <div class="row">
+                <h3 i18n="@@application-availableFunds-retirementQuestion">
+                    <b>
+                        Does anyone in your household have an individual retirement account or Keogh Plan?
+                    </b>
+                </h3>
+                <fieldset>
+                    <div class="toggle">
+                        <input type="radio" name="retirement" value="weight" id="retirementYes" checked="checked" />
+                        <label for="retirementYes">Yes</label>
+                        <input type="radio" name="retirement" value="dimensions" id="retirementNo" />
+                        <label for="retirementNo">No</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="section">
+                <div class="centered-row">
+                    <div class="centered-col">
+                        <button class="btn btn-secondary btn-lg button-left" (click)="ContinueToInvestments()">Go
+                            Back</button>
+                    </div>
+                    <div class="centered-col">
+                        <button class="btn btn-primary btn-lg" (click)="ContinueToTrustFunds()">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #trust funds -->
+<div class="row" *ngIf="showTrustFunds" id="trustFunds">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <div class="section">
+                <h1 i18n="@@application-availableFunds-trustFunds">
+                    <b>
+                        Trust Funds
+                    </b>
+                </h1>
+            </div>
+            <div class="row">
+                <h3 i18n="@@application-availableFunds-trustFundsQuestion">
+                    <b>
+                        Does anyone in your household, including children, have a trust fund?
+                    </b>
+                </h3>
+                <fieldset>
+                    <div class="toggle">
+                        <input type="radio" name="trustFunds" value="weight" id="trustFundsYes" checked="checked" />
+                        <label for="trustFundsYes">Yes</label>
+                        <input type="radio" name="trustFunds" value="dimensions" id="trustFundsNo" />
+                        <label for="trustFundsNo">No</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="section">
+                <div class="centered-row">
+                    <div class="centered-col">
+                        <button class="btn btn-secondary btn-lg button-left" (click)="ContinueToRetirementAccounts()">Go
+                            Back</button>
+                    </div>
+                    <div class="centered-col">
+                        <button class="btn btn-primary btn-lg" (click)="ContinueToPrepaidBurial()">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #prepaid burial account -->
+<div class="row" *ngIf="showPrepaidBurial" id="prepaidBurial">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <br>
+            <h1 i18n="@@application-availableFunds-burialAccount" style="text-align: center;">
+                <b>
+                    Prepaid Burial Account
+                </b>
+            </h1>
+            <br>
+            <div class="row">
+                <h3 i18n="@@application-availableFunds-burialAccountQuestion">
+                    <b>
+                        Does anyone in your household have a prepaid burial account or burial trust account?
+                    </b>
+                </h3>
+                <fieldset>
+                    <div class="toggle">
+                        <input type="radio" name="burialAccount" value="weight" id="burialAccountYes"
+                            checked="checked" />
+                        <label for="burialAccountYes">Yes</label>
+                        <input type="radio" name="burialAccount" value="dimensions" id="burialAccountNo" />
+                        <label for="burialAccountNo">No</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="section">
+                <div class="centered-row">
+                    <div class="centered-col">
+                        <button class="btn btn-secondary btn-lg button-left" (click)="ContinueToTrustFunds()">Go
+                            Back</button>
+                    </div>
+                    <div class="centered-col">
+                        <button class="btn btn-primary btn-lg" (click)="ContinueToOtherLiquid()">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #other liquid resources -->
+<div class="row" *ngIf="showOtherLiquid" id="otherLiquid">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <div class="section">
+                <h1 i18n="@@application-availableFunds-otherLiquid" style="text-align: center;">
+                    <b>
+                        Other Liquid Resources
+                    </b>
+                </h1>
+            </div>
+            <div class="row">
+                <h3 i18n="@@application-availableFunds-otherLiquidQuestion">
+                    <b>
+                        Does anyone in your household have access to any other liquid resources (cash,
+                        checking and/or savings)?
+                    </b>
+                </h3>
+                <fieldset>
+                    <div class="toggle">
+                        <input type="radio" name="otherLiquid" value="weight" id="otherLiquidYes" checked="checked" />
+                        <label for="otherLiquidYes">Yes</label>
+                        <input type="radio" name="otherLiquid" value="dimensions" id="otherLiquidNo" />
+                        <label for="otherLiquidNo">No</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="section">
+                <div class="centered-row">
+                    <div class="centered-col">
+                        <button class="btn btn-secondary btn-lg button-left" (click)="ContinueToPrepaidBurial()">Go
+                            Back</button>
+                    </div>
+                    <div class="centered-col">
+                        <button class="btn btn-primary btn-lg" (click)="ShowIncome()">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

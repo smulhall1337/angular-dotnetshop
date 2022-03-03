@@ -1,0 +1,104 @@
+<!-- 
+    TODO: 
+    1. Enforce minimum requirements for password
+    2. Email as username??
+        a. email validation if yes
+    3.
+ -->
+<div class="container registration-container border">
+    <div class="registration-body">
+        <p class="h1" i18n="@@registration-createAccount">Create Account</p>
+        <p class="h3 section-title" i18n="@@registration-accountDetails">Account Details</p>
+        <br>
+        <div class="form">
+            <div class="row">
+                <div class="col-md-4 mt-md-0 mt-3" i18n="@@firstName"> <label>First Name</label> <input type="text" class="form-control"
+                        required> </div>
+                <div class="col-md-4 mt-md-0 mt-3" i18n="@@middleName"> <label>Middle Name</label> <input type="text" class="form-control"
+                        required> </div>
+                <div class="col-md-4 mt-md-0 mt-3" i18n="@@lastName"> <label>Last Name</label> <input type="text" class="form-control"
+                        required> </div>
+            </div>
+            <br>
+            <p i18n="@@registration-providingEmail">
+                Providing an email address is not required. However, if you do not provide an email address for this
+                account, you will not be able to recover a forgotten username or password.
+            </p>
+            <br>
+            <div class="row" i18n="@@email">
+                <div class="col-md-6 mt-md-0 mt-3"><label>Email</label> <input type="text" class="form-control"
+                        required></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3" i18n="@@confirmEmail"><label>Confirm Email</label> <input type="text" class="form-control"
+                        required></div>
+            </div>
+            <br>
+            <div class="section">
+                <div class="row">
+                    <div class="col-md-6 mt-md-0 mt-3" i18n="@@userName"><label>Username</label> <input type="text" class="form-control"
+                            required></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-md-0 mt-3" i18n="@@password"><label>Password</label> <input type="text" class="form-control"
+                            required></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-md-0 mt-3" i18n="@@confirmPassword"><label>Confirm Password</label> <input type="text"
+                            class="form-control" required></div>
+                </div>
+            </div>
+            <hr class="line">
+            <br>
+            <p class="h3 section-title" i18n="@@registration-profile">Profile</p>
+            <div class="col-md-6 mt-md-0 mt-3">
+                <label i18n="@@dateOfBirth">Date Of Birth</label>
+                <br>
+                <mat-form-field>
+                    <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <hr class="line">
+            <br>
+            <p class="h3 section-title" i18n="@@registration-securityQuestions">Security Questions</p>
+            <div class="section">
+                <div class="row">
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label i18n="@@registration-securityQuestions-questionOne">Question 1</label>
+                        <select class="form-select form-select mb-3" aria-label=".form-select-lg example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label i18n="@@registration-securityQuestions-questionTwo">Question </label>
+                        <select class="form-select form-select mb-3" aria-label=".form-select-lg example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label i18n="@@registration-securityQuestions-questionThree">Question 3</label>
+                        <select class="form-select form-select mb-3" aria-label=".form-select-lg example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                    </div>
+                </div>
+            </div>
+            <div class="btn btn-primary" i18n="@@submit" (click)="submit()">Submit</div>
+        </div>
+    </div>
+</div>

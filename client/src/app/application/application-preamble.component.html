@@ -1,0 +1,405 @@
+<!-- 
+    TODO: 
+    1. clean up mailing address
+ -->
+<div class="row" id="preamble" *ngIf="showPreamble">
+    <!-- Start Header -->
+    <div class="content-card">
+        <div class="form-section-header header-start">
+            <div class="col-md-12">
+                <h2>
+                    Start Your Application
+                </h2>
+            </div>
+        </div>
+        <div class="card-body" style="padding: 0%;">
+            <div class="centered-row">
+                <div class="centered-col">
+                    <img src="../../assets/images/Icons/enter_icon.png" width="100" height="100">
+                </div>
+                <div class="centered-col">
+                    <img src="../../assets/images/Icons/see_icon.png" width="100" height="100">
+                </div>
+                <div class="centered-col">
+                    <img src="../../assets/images/Icons/find_icon.png" width="100" height="100">
+                </div>
+            </div>
+            <div class="centered-row">
+                <div class="col-md-4" style="text-align: center;">
+                    <h2 class="starth5">ENTER YOUR INFORMATION</h2>
+                </div>
+                <div class="col-md-4" style="text-align: center;">
+                    <h2 class="starth5">SUBMIT APPLICATION</h2>
+                </div>
+                <div class="col-md-4" style="text-align: center;">
+                    <h2 class="starth5">CHECK APPLICATION STATUS</h2>
+                </div>
+            </div>
+            <div class="centered-row">
+                <div class="col-md-4" style="text-align: center;">
+                    <p>Complete the online application. You will be asked a series of questions about you and your
+                        household as well as your income and expenses.</p>
+                </div>
+                <div class="col-md-4" style="text-align: center;">
+                    <p>Submit the completed application. Your application will be sent to the nearest DHR office in your
+                        county.</p>
+                </div>
+                <div class="col-md-4" style="text-align: center;">
+                    <p>The county office will update the application status periodically. An interview will be scheduled
+                        with a worker by phone or in person before you start to receive benefits.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <div class="section">
+                <h1 i18n="@@application-preamble-header" style="text-align: center;">
+                    <b>
+                        Before you continue, please read the following
+                    </b>
+                </h1>
+            </div>
+            <div class="section">
+                <p i18n="@@application-preamble-rightToFile" style="text-align: center;">
+                    <b>
+                        You have the right to file an application with only your name, address, and signature.
+                        If you choose to do so, please note we will be unable to automatically screen your
+                        application to determine if you qualify for expedited assistance as your application
+                        will not contain income or resource information.
+                    </b>
+                </p>
+
+                <p i18n="@@application-preamble-expeditedAssistance" style="text-align: center;">
+                    You may get expedited assistance within 7 days if: Your household’s monthly gross income is
+                    less than $150 and your liquid resources (cash, checking, or savings) are less than $100 OR
+                    your household’s monthly rent/mortgage and utilities are more than your household’s income
+                    and liquid resources OR your household is a destitute migrant or seasonal farmworker
+                    household and your liquid resources are less than $100.
+                </p>
+
+
+                <p i18n="@@application-preamble-whenYouWillRecieve" style="text-align: center;">
+                    If you are eligible, your benefits will be determined from the day we receive your signed
+                    application. This means your first month of benefits will be prorated from the day we
+                    receive your application. If you submit your application using this website after 5:00 pm
+                    CST or on a weekend or holiday, it will be received the next business day. When a resident
+                    of an institution is jointly applying for SSI and food assistance prior to leaving the
+                    institution, the filing date on the application is the date of release of the applicant from
+                    the institution. You must be interviewed after your application is received. You will be
+                    notified of your appointment time and date. We must approve or deny your application within
+                    30 days. Applications must be processed in accordance with SNAP/Food Assistance procedures,
+                    including timeliness, notice, and FH requirements regardless of whether the application is
+                    for SNAP and other programs. Also, a household may not be denied Food Assistance benefits
+                    solely because it has been denied benefits from other programs.
+                </p>
+                <div class="d-grid gap-2 col-2 mx-auto">
+                    <button type="button" class="btn btn-primary btn-sm"
+                        i18n="@@application-preamble-acceptAndContinueButton" (click)="acceptPreamble()">Accept and
+                        Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- needed information -->
+<div class="row" *ngIf="showNeededInformation" id="neededInformation">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <div class="section">
+                <h1 i18n="@@application-neededInformation-header" style="text-align: center;">
+                    <b>
+                        Information Needed To Process An Application
+                    </b>
+                </h1>
+            </div>
+            <div class="section">
+                <p i18n="@@application-neededInformation-pleaseBring">
+                    Please bring as much of the following information as possible with you when you come for
+                    your interview. This will help us in processing your application faster. With your
+                    cooperation, the Food Assistance Office will help you obtain the necessary proof to process
+                    your application if you need further assistance.
+                </p>
+                <div class="section">
+                    <ol style="list-style-type: decimal; list-style-position:inside;">
+                        <span>
+                            <li i18n="@@neededInformation-pleaseBring-proofOfIdentity">
+                                Proof of your identity (examples: birth certificate, driver's license, school ID)
+                            </li>
+                            <li i18n="@@neededInformation-pleaseBring-nameDatesOfBirth">
+                                Names and dates of birth of all persons who live in your home.
+                            </li>
+                            <li i18n="@@neededInformation-pleaseBring-socialSecurity">
+                                Social Security Numbers for each household member. If an individual does not have a
+                                Social Security Number the Food Assistance Office will tell you how to apply for
+                                one. You only have to give social security numbers (SSN) and citizenship/immigration
+                                information for those household members that you are asking for food assistance
+                                benefits. You will have to give information such as income for household members who
+                                are not seeking benefits to determine if the persons for whom you are applying are
+                                eligible to receive benefits.
+                            </li>
+                            <li i18n="@@neededInformation-pleaseBring-payStubs">
+                                Current check stubs, pay slips, or employer's statements that show the gross amount
+                                of money paid to all working persons in the home.
+                            </li>
+                            <li i18n="@@neededInformation-pleaseBring-givesMoney">
+                                A signed and dated statement from any person who gives money to you or to anyone in
+                                the household. The statement should show how much money is given, when and how
+                                often.
+                            </li>
+                            <li i18n="@@neededInformation-pleaseBring-unemploymentCompensation">
+                                Award letters or stubs that show the amount of unemployment compensation (pennies)
+                                paid to you or any other person in your household.
+                            </li>
+                            <li i18n="@@neededInformation-pleaseBring-socialSecurityPayment">
+                                Letters from Social Security, Railroad Retirement, Veteran's Administration,
+                                retirement association, or any other agency from which you or anyone in your
+                                household receives a check.
+                            </li>
+                            <li i18n="@@neededInformation-pleaseBring-mortgage">
+                                Current proof of rent or mortgage payments, including lot rent, property taxes, and
+                                fire insurance on the home.
+                            </li>
+                            <li i18n="@@neededInformation-pleaseBring-utilities">
+                                Current receipts for utilities (gas, lights, water, telephone, garbage service).
+                            </li>
+                            <li i18n="@@neededInformation-pleaseBring-roomAndBoard">
+                                A signed and dated statement from any roomer and/or boarder showing the amount they
+                                pay and how often.
+                            </li>
+                            <li i18n="@@neededInformation-pleaseBring-INS">
+                                Immigration and Naturalization Service (INS) identification forms if any member of
+                                your household is an alien.
+                            </li>
+                            <li i18n="@@neededInformation-pleaseBring-bankStatements">
+                                Current bank statements of savings and checking accounts in banks, savings and loan
+                                associations, credit unions, etc.
+                            </li>
+                            <li i18n="@@neededInformation-pleaseBring-stocks">
+                                Letter or other statement showing the value of any stocks or bonds owned by any
+                                household member.
+                            </li>
+                            <li i18n="@@neededInformation-pleaseBring-childCare">
+                                Signed and dated statements from the person providing care for a child or other
+                                dependent, including amount charged.
+                            </li>
+                            <li i18n="@@neededInformation-pleaseBring-disabilityPayments">
+                                If you have a household member who is 60 or older or a member who is disabled, your
+                                household may be eligible for a medical deduction. You will need to bring proof of
+                                their medical expenses, including health insurance policies, premiums, and
+                                reimbursements from any medical insurance policy, medicaid or medicare.
+                            </li>
+                            <li i18n="@@neededInformation-pleaseBring-childSupport">
+                                Verification of any LEGALLY OBLIGATED child support paid by any member of your
+                                household to or for a non-household member. This includes the Legal Obligation (i.e.
+                                court order) and the amount they actually paid.
+                            </li>
+                        </span>
+                    </ol>
+                </div>
+                <!-- ##Nondiscrimination statement -->
+                <h1 i18n="@@application-neededInformation-pleaseBring-nondiscrimination" style="text-align: center;">
+                    <b>
+                        USDA Nondiscrimination Statement
+                    </b>
+                </h1>
+
+                <p i18n="@@application-neededInformation-pleaseBring-nondiscrimination1" style="text-align: center;">
+                    In accordance with Federal civil rights law and U.S. Department of Agriculture (USDA) civil
+                    rights regulations and policies, the USDA, its Agencies, offices, and employees, and
+                    institutions participating in or administering USDA programs are prohibited from
+                    discriminating based on race, color, national origin, sex, religious creed, disability, age,
+                    political beliefs, or reprisal or retaliation for prior civil rights activity in any program
+                    or activity conducted or funded by USDA.
+
+
+                </p>
+
+                <p i18n="@@application-neededInformation-pleaseBring-disability" style="text-align: center;">
+                    Persons with disabilities who require alternative means of communication for program
+                    information (e.g. Braille, large print, audiotape, American Sign Language, etc.), should
+                    contact the Agency (State or local) where they applied for benefits. Individuals who are
+                    deaf, hard of hearing or have speech disabilities may contact USDA through the Federal Relay
+                    Service at (800) 877-8339. Additionally, program information may be made available in
+                    languages other than English.
+
+
+                </p>
+
+                <p i18n="@@application-neededInformation-pleaseBring-fileComplaint" style="text-align: center;">
+                    To file a program complaint of discrimination, complete the USDA Program Discrimination
+                    Complaint Form, (AD-3027) found online
+                    at:http://www.ascr.usda.gov/complaint_filing_cust.html , and at any USDA office, or write a
+                    letter addressed to USDA and provide in the letter all of the information requested in the
+                    form. To request a copy of the complaint form, call (866) 632-9992. Submit your completed
+                    form or letter to USDA by:
+                </p>
+
+                <p i18n="@@application-neededInformation-pleaseBring-mailingAddress" style="text-align: center;">
+                    (1) mail: U.S. Department of Agriculture Office of the Assistant Secretary for Civil Rights
+                </p>
+                <p i18n="@@application-neededInformation-pleaseBring-streetAddress" style="text-align: center;">
+                    1400 Independence Avenue, SW
+                    Washington, D.C. 20250-9410;
+                </p>
+                <p i18n="@@application-neededInformation-pleaseBring-fax" style="text-align: center;">
+                    (2) fax: (202) 690-7442; or
+                </p>
+                <p i18n="@@application-neededInformation-pleaseBring-email" style="text-align: center;">
+                    (3)
+                    email:program.intake@usda.gov
+                </p>
+                <p i18n="@@application-neededInformation-pleaseBring-EEO" style="text-align: center;">
+                    This institution is an equal opportunity provider.
+                </p>
+
+
+            </div>
+            <div class="centered-row">
+                <div class="centered-col">
+                    <button class="btn btn-secondary btn-lg button-left" (click)="BackToPreamble()">Go
+                        Back</button>
+                </div>
+                <div class="centered-col">
+                    <button class="btn btn-primary btn-lg" (click)="AcceptNeededInformation()">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- important information -->
+<div class="row" *ngIf="showImportantInformation" id="importantInformation">
+    <div class="content-card">
+        <div class="card-body" style="padding: 0%;">
+            <div class="section">
+                <h1 i18n="@@application-importantInformation-header" style="text-align: center;">
+                    <b>
+                        Important Information
+                    </b>
+                </h1>
+            </div>
+            <div class="section">
+                <h1 i18n="@@application-importantInformation-privacyStatement"
+                    style="text-align: center; color: royalblue;">
+                    <b>
+                        Privacy Statement
+                    </b>
+                </h1>
+            </div>
+            <p i18n="@@application-importantInformation-collection" style="text-align: center;">
+                The collection of this information is authorized under the Food and Nutrition Act, as
+                amended. The information will be used to determine whether your household is eligible or
+                continues to be eligible to participate in the program. We will verify this information
+                through computer matching programs. We will also use this information to monitor compliance
+                with program regulations and for program management.
+            </p>
+
+            <p i18n="@@application-importantInformation-disclosure" style="text-align: center;">
+                This information may be disclosed to other Federal and State agencies, including the Income
+                Eligibility Verification System(IEVS), for official examination, and to law enforcement
+                officials for the purpose of apprehending persons fleeing to avoid the law.
+            </p>
+
+            <p i18n="@@application-importantInformation-IEVS" style="text-align: center;">
+                Information provided will be verified using IEVS when discrepancies are found by the State
+                agency and that such information may affect household eligibility and level of benefits.
+            </p>
+
+            <p i18n="@@application-importantInformation-alienStatis" style="text-align: center;">
+                Alien status of applicant household may be subject to verification by INS through the
+                submission of information from the application to INS and the submitted information received
+                from INS may affect the household’s eligibility and level of benefits.
+            </p>
+
+            <p i18n="@@application-importantInformation-federalAndStateAgencies" style="text-align: center;">
+                If a claim arises against your household, the information on this application may be
+                referred to Federal and State agencies, as well as private claims collection agencies, for
+                claims collection action.
+            </p>
+
+            <p i18n="@@application-importantInformation-providingSSN" style="text-align: center;">
+                Providing the requested information, including SSN of each member, is voluntary. However,
+                failure to provide an SSN will result in the denial of benefits to each individual failing
+                to provide an SSN. Any SSNs provided will be used and disclosed in the same manner as SSNs
+                of eligible household members.
+            </p>
+
+            <hr>
+
+            <h1 i18n="@@application-importantInformation-NVRA" style="text-align: center; color: royalblue;">
+                <b>
+                    NVRA
+                </b>
+            </h1>
+
+            <p i18n="@@application-importantInformation-NVRAHR" style="text-align: center;">
+                The National Voter Registration Act (NVRA) requires the Department of Human Resources to
+                provide you with an opportunity to register to vote.
+            </p>
+
+            <p i18n="@@application-importantInformation-registerToVote" style="text-align: center;">
+                Applying to register or declining to register to vote will not affect the amount of
+                assistance that you will be provided by this agency.
+            </p>
+
+            <p i18n="@@application-importantInformation-secretaryOfState" style="text-align: center;">
+                If you are already registered to vote at your current address, you do not need to
+                re-register. If you would like to register to vote or would like to change your address for
+                voting purposes, you may do so through the Secretary of State’s office at the following
+                link:
+                <a style="color: blue;" href="http://www.alabamavotes.gov">Secretary
+                    of State</a>
+            </p>
+
+            <p i18n="@@application-importantInformation-needHelpRegistering" style="text-align: center;">
+                If you would like help in filling out the voter registration form, we will help you. You may
+                seek assistance with the application form at the time of your interview or by calling your
+                local Department of Human Resources office located within your county. The decision to seek
+                or accept help is yours. You may fill out the application form in private.
+            </p>
+
+            <p i18n="@@application-importantInformation-wontUseInfo" style="text-align: center;">
+                The Department of Human Resources will not use any information you submit related to voter
+                registration for any other purpose.
+            </p>
+
+            <p i18n="@@application-importantInformation-interference" style="text-align: center;">
+                If you believe that someone has interfered with your right to register or to decline to
+                register to vote, your right to privacy in deciding whether to register or in applying to
+                register to vote, or your right to choose your own political party or other political
+                preference, you may file a complaint with the Secretary of State Capitol:
+            </p>
+            <p style="text-align: center;">
+                600 Dexter Avenue Suite E-208
+            </p>
+            <p style="text-align: center;">
+                Montgomery, AL 36130
+            </p>
+            <p style="text-align: center;">
+                Or by calling:
+            </p>
+            <p style="text-align: center;">
+                334-242-7210 or 1-800-274-VOTE
+                (1-800-274-8683).
+            </p>
+            <hr>
+            <small i18n="@@application-importantInformation-fundedBy" style="text-align: center;">
+                This project has been funded at least in part with Federal funds from the U.S. Department of
+                Agriculture, Food and Nutrition Service. The contents of this publication do not necessarily
+                reflect the view of policies of the U.S. Department of Agriculture, nor does mention of
+                trade names, commercial products, or organizations imply endorsement by the U.S. government.
+            </small>
+            <div class="section">
+                <div class="centered-row">
+                    <div class="centered-col">
+                        <button class="btn btn-secondary btn-lg button-left" (click)="BackToNeededInformation()">Go
+                            Back</button>
+                    </div>
+                    <div class="centered-col">
+                        <button class="btn btn-primary btn-lg" (click)="ContinueToHousehold()">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
