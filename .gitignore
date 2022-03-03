@@ -49,3 +49,9 @@ Thumbs.db
 
 client/node_modules
 Student Assets/
+API/bin/Release
+API/obj/Release
+Core/bin/Release
+Core/obj/Release
+Infrastructure/bin/Release
+Infrastructure/obj/Release

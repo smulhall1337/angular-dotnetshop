@@ -16,6 +16,9 @@ import {LoginLandingComponent} from './login-landing/login-landing.component';
 import {ShopHomeComponent} from "./shop-home/shop-home.component";
 import {ShopComponent} from "./shop/shop.component";
 import {ProductDetailsComponent} from "./shop/product-details/product-details.component";
+import {TestErrorComponent} from "./core/test-error/test-error.component";
+import {ServerErrorComponent} from "./core/server-error/server-error.component";
+import {NotFoundComponent} from "./core/not-found/not-found.component";
 
 const routes: Routes = [
   {
@@ -71,6 +74,18 @@ const routes: Routes = [
   //   component: HomeComponent
   // },
   // shop routes
+  {
+    path: 'test-error',
+    component: TestErrorComponent
+  },
+  {
+    path: 'server-error',
+    component: ServerErrorComponent
+  },
+  {
+    path: 'not-found',
+    component: NotFoundComponent
+  },
   {
     path: '',
     component: ShopHomeComponent

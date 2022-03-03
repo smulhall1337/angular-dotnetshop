@@ -13,7 +13,7 @@ import { ApplicationCardComponent } from './application-card/application-card.co
 import { LogPublishersService } from './shared/logging/log-publishers.service';
 import { LoggingService } from './shared/logging/logging.service';
 import { LogTestComponent } from './log-test/log-test.component';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
@@ -39,6 +39,7 @@ import {CoreModule} from "./core/core.module";
 import {ShopModule} from "./shop/shop.module";
 import {ShopHomeComponent} from "./shop-home/shop-home.component";
 import {ShopHomeModule} from "./shop-home/shop-home.module";
+import {ErrorInterceptor} from "./core/Interceptors/error.interceptor";
 
 
 @NgModule({
@@ -83,6 +84,11 @@ import {ShopHomeModule} from "./shop-home/shop-home.module";
     LoggingService,
     LogPublishersService,
     authInterceptorProvider,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
+      multi: true // use this interceptor along with all the built in angular interceptors
+    }
   ],
   bootstrap: [AppComponent]
 })
