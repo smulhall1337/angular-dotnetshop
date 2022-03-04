@@ -2,6 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
 
+
+/**
+ * Used for testing various errors that could occur
+ */
 @Component({
   selector: 'app-test-error',
   templateUrl: './test-error.component.html',
@@ -9,6 +13,7 @@ import {environment} from "../../../environments/environment";
 })
 export class TestErrorComponent implements OnInit {
   baseUrl = environment.apiUrl;
+  validationErrors: any;
 
   constructor(private http: HttpClient) {
   }
@@ -37,6 +42,9 @@ export class TestErrorComponent implements OnInit {
   Get400ValidationError() {
     this.http.get(this.baseUrl + 'products/fortytwo').subscribe(response => {
       console.log(response)
-    }, error => console.log(error));
+    }, error => {
+      console.log(error);
+      this.validationErrors = error.errors
+    });
   }
 }

@@ -15,7 +15,8 @@ export class ShopComponent implements OnInit {
   // our seach property is a child of the shop component
   // we use ViewChild to access that field
   // static field specifies whether or not this is a static element in our component(not relying on any dynamic activity)
-  @ViewChild('search', {static: true}) searchTerm: ElementRef;
+  // flase in this case because of th ngif on the search box
+  @ViewChild('search', {static: false}) searchTerm: ElementRef;
 
   products: IProduct[];
   brands: IBrand[];

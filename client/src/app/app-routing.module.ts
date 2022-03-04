@@ -76,25 +76,30 @@ const routes: Routes = [
   // shop routes
   {
     path: 'test-error',
-    component: TestErrorComponent
+    component: TestErrorComponent,
+    data: {breadcrumb: 'Test Errors'}
   },
   {
     path: 'server-error',
-    component: ServerErrorComponent
+    component: ServerErrorComponent,
+    data: {breadcrumb: 'Server Errors'}
   },
   {
     path: 'not-found',
-    component: NotFoundComponent
+    component: NotFoundComponent,
+    data: {breadcrumb: 'Not Found'}
   },
   {
     path: '',
-    component: ShopHomeComponent
+    component: ShopHomeComponent,
+    data: {breadcrumb: 'Home'}
   },
   {
     path: 'shop',
     // lazy loading of routes from the shop module
     // see /shop/shoproutingmodule
-    loadChildren: () => import('./shop/shop.module').then(mod => mod.ShopModule)
+    loadChildren: () => import('./shop/shop.module').then(mod => mod.ShopModule),
+    data: {breadcrumb: 'Shop'}
   },
   // end shop routes
   {
