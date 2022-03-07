@@ -59,9 +59,9 @@
                   </td>
                   <td class="align-middle">
                     <div class="d-flex align-items-center">
-                      <i class="fa fa-minus-circle text-warning mr-2" style="cursor: pointer; font-size: 2em;"></i>
+                      <i (click)="DecrementItemQuantity(item)" class="fa fa-minus-circle text-warning mr-2" style="cursor: pointer; font-size: 2em;"></i>
                       <span class="font-weight-bold" style="font-size: 1.5em">{{item.quantity}}</span>
-                      <i class="fa fa-plus-circle text-warning mx-2" style="cursor: pointer; font-size: 2em;"></i>
+                      <i (click)="IncrementItemQuantity(item)" class="fa fa-plus-circle text-warning mx-2" style="cursor: pointer; font-size: 2em;"></i>
                     </div>
                   </td>
                   <td class="align-middle">
@@ -71,7 +71,7 @@
                   </td>
                   <td class="align-middle text-center">
                     <div class="d-flex align-items-center">
-                      <a class="text-danger"><i class="fa fa-trash" style="font-size: 2em"></i></a>
+                      <a class="text-danger"><i (click)="RemoveBasketItem(item)" class="fa fa-trash" style="font-size: 2em; cursor: pointer"></i></a>
                     </div>
                   </td>
                 </tr>
@@ -79,6 +79,15 @@
               </table>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 offset-6">
+<!-- Dont need to pass the total component any info. all comes from the basket service -->
+          <app-order-totals></app-order-totals>
+          <a routerLink="/checkout" class="btn btn-outline-primary py-2 btn-block">
+            Checkout
+          </a>
         </div>
       </div>
     </div>

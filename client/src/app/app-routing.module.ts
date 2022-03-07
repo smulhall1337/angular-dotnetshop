@@ -106,6 +106,11 @@ const routes: Routes = [
     loadChildren: () => import('./basket/basket.module').then(mod => mod.BasketModule),
     data: {breadcrumb: 'Basket'}
   },
+  {
+    path: 'checkout',
+    loadChildren: () => import('./shop-checkout/shop-checkout.module').then(mod => mod.ShopCheckoutModule),
+    data: {breadcrumb: 'Checkout'}
+  },
   // end shop routes
   {
     path: '**',
