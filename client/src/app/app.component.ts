@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {IProduct} from "./shared/models/product";
+import {BasketService} from "./basket/basket.service";
 
 @Component({
   selector: 'app-root',
@@ -7,34 +8,22 @@ import {IProduct} from "./shared/models/product";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  private roles: string[] = [];
-  isLoggedIn = false;
-  showAdminBoard = false;
   showModeratorBoard = false;
-  username?: string;
-
-  /*logout(): void {
-    this.tokenStorageService.signOut();
-    window.location.reload();
-  }*/
-
   title = 'Snap';
   products: IProduct[];
 
-  constructor() { }
+  constructor(private basketService: BasketService) { }
 
   ngOnInit(): void {
-
-    /*this.isLoggedIn = !!this.tokenStorageService.getToken();
-
-    if (this.isLoggedIn) {
-      const user = this.tokenStorageService.getUser();
-      this.roles = user.roles;
-
-      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
-      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
-
-      this.username = user.username;
-    }*/
+    const basketId = localStorage.getItem('basket_id'); // see if theres an existing basket
+    if (basketId)
+    {
+      this.basketService.GetBasket(basketId).subscribe(() => {
+        console.log('basket initialised from local storage')
+      }, error => {
+        console.log(error);
+        }
+      );
+    }
   }
 }
