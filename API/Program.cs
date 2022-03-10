@@ -1,6 +1,9 @@
 using API.Extensions;
 using API.Helpers;
 using API.Middleware;
+using Core.Entities.Identity;
+using Infrastructure.Identity;
+using Microsoft.AspNetCore.Identity;
 using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,8 +29,13 @@ builder.Services.AddSingleton<IConnectionMultiplexer>(config =>
 
 // repository services found in Extensions/ApplicationsServiceExtensions.cs
 builder.Services.AddApplicationServices();
+builder.Services.AddIdentityServices(builder.Configuration);
 builder.Services.AddAutoMapper(typeof(MappingProfiles));
 builder.Services.AddDbContext<StoreContext>(opt => opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<AppIdentityDbContext>(opt =>
+{
+    opt.UseSqlite(builder.Configuration.GetConnectionString("IdentityConnection"));
+});
 builder.Services.AddSwaggerDocumentation();
 builder.Services.AddCors(opt =>
 {
@@ -47,6 +55,12 @@ try
     var context = services.GetRequiredService<StoreContext>();
     await context.Database.MigrateAsync();
     await StoreContextSeed.SeedAsync(context, loggerFactory);
+
+    // bootstrap user data
+    var userManager = services.GetRequiredService<UserManager<AppUser>>();
+    var identityContext = services.GetRequiredService<AppIdentityDbContext>();
+    await identityContext.Database.MigrateAsync();
+    await AppIdentityDbContextSeed.SeedUserAsync(userManager);
 }
 catch (Exception ex)
 {
@@ -76,6 +90,7 @@ app.UseHttpsRedirection();
 app.UseRouting();
 app.UseStaticFiles(); // used to serve static files such as images
 app.UseCors("CorsPolicy");
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 

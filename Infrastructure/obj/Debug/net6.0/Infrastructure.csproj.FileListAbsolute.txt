@@ -5,7 +5,6 @@ C:\Users\smulhall\Documents\git\test\Snap\Infrastructure\obj\Debug\net6.0\Infras
 C:\Users\smulhall\Documents\git\test\Snap\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CoreCompileInputs.cache
 C:\Users\smulhall\Documents\git\test\Snap\Infrastructure\bin\Debug\net6.0\Infrastructure.deps.json
 C:\Users\smulhall\Documents\git\test\Snap\Infrastructure\bin\Debug\net6.0\Infrastructure.dll
-C:\Users\smulhall\Documents\git\test\Snap\Infrastructure\bin\Debug\net6.0\ref\Infrastructure.dll
 C:\Users\smulhall\Documents\git\test\Snap\Infrastructure\bin\Debug\net6.0\Infrastructure.pdb
 C:\Users\smulhall\Documents\git\test\Snap\Infrastructure\bin\Debug\net6.0\Core.dll
 C:\Users\smulhall\Documents\git\test\Snap\Infrastructure\bin\Debug\net6.0\Core.pdb
@@ -15,3 +14,4 @@ C:\Users\smulhall\Documents\git\test\Snap\Infrastructure\obj\Debug\net6.0\ref\In
 C:\Users\smulhall\Documents\git\test\Snap\Infrastructure\obj\Debug\net6.0\Infrastructure.pdb
 C:\Users\smulhall\Documents\git\test\Snap\Infrastructure\bin\Debug\net6.0\Infrastructure.runtimeconfig.json
 C:\Users\smulhall\Documents\git\test\Snap\Infrastructure\obj\Debug\net6.0\Infrastructure.genruntimeconfig.cache
+C:\Users\smulhall\Documents\git\test\Snap\Infrastructure\obj\Debug\net6.0\refint\Infrastructure.dll
