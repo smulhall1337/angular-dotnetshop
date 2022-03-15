@@ -107,6 +107,11 @@ const routes: Routes = [
     data: {breadcrumb: 'Basket'}
   },
   {
+    path: 'account',
+    loadChildren: () => import('./account/account.module').then(mod => mod.AccountModule),
+    data: {breadcrumb: {skip: true}}
+  },
+  {
     path: 'checkout',
     loadChildren: () => import('./shop-checkout/shop-checkout.module').then(mod => mod.ShopCheckoutModule),
     data: {breadcrumb: 'Checkout'}
