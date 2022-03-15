@@ -5,6 +5,8 @@ import { PagingHeaderComponent } from './components/paging-header/paging-header.
 import { PagerComponent } from './components/pager/pager.component';
 import {CarouselModule} from "ngx-bootstrap/carousel";
 import { OrderTotalsComponent } from './components/order-totals/order-totals.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {BsDropdownModule} from "ngx-bootstrap/dropdown";
 
 
 @NgModule({
@@ -18,15 +20,18 @@ import { OrderTotalsComponent } from './components/order-totals/order-totals.com
     // pagination odule has its own providers array, so we need to pass those providers to the
     // root module using forRoot()
     PaginationModule.forRoot(),
-    CarouselModule.forRoot()
-
+    CarouselModule.forRoot(),
+    BsDropdownModule.forRoot(),
+    ReactiveFormsModule
   ],
   exports: [
     PaginationModule,
     PagingHeaderComponent,
     PagerComponent,
     CarouselModule,
-    OrderTotalsComponent
+    OrderTotalsComponent,
+    BsDropdownModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

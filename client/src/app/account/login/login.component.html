@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-center mt-5">
   <div class="col-3">
-    <form class="form-signin">
+    <form [formGroup]="loginForm" (ngSubmit)="OnSubmit()">
       <div class="text-center mb-4">
         <svg xmlns="http://www.w3.org/2000/svg" width="300.000000pt" height="225.000000pt"
              viewBox="0 0 300.000000 225.000000" preserveAspectRatio="xMidYMid meet">
@@ -33,13 +33,34 @@
       </div>
 
       <div class="form-label-group">
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" autofocus="">
+        <input type="email" formControlName="email" id="inputEmail" class="form-control" placeholder="Email address"
+               autofocus="">
         <label for="inputEmail">Email address</label>
+        <span class="text-danger"
+              *ngIf="loginForm.get('email').invalid
+              && loginForm.get('email').touched
+              && loginForm.get('email').errors['required']">
+          Email Address is Required
+        </span>
+        <span class="text-danger"
+              *ngIf="loginForm.get('email').invalid
+              && loginForm.get('email').touched
+              && loginForm.get('email').errors['pattern']">
+          Email address is not valid
+        </span>
+
       </div>
 
       <div class="form-label-group">
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password">
+        <input type="password" formControlName="password" id="inputPassword" class="form-control"
+               placeholder="Password">
         <label for="inputPassword">Password</label>
+        <span class="text-danger"
+              *ngIf="loginForm.get('password').invalid
+              && loginForm.get('password').touched
+              && loginForm.get('password').errors['required']">
+          Password is required
+        </span>
       </div>
 
       <!--  <div class="checkbox mb-3">-->
@@ -47,7 +68,17 @@
       <!--      <input type="checkbox" value="remember-me"> Remember me-->
       <!--    </label>-->
       <!--  </div>-->
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="loginForm.invalid">Sign in</button>
     </form>
   </div>
+
+  <!--  useful debugging -->
+  <div class="col-4">
+    <p>Form Status: {{loginForm.status}}</p>
+    <p>Email Status: {{loginForm.get('email').status}}</p>
+    <p>Email Touched: {{loginForm.get('email').touched}}</p>
+    <p>Email Dirty: {{loginForm.get('email').dirty}}</p>
+    <pre>{{loginForm.value | json}}</pre>
+  </div>
+
 </div>
