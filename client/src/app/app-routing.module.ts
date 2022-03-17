@@ -19,6 +19,7 @@ import {ProductDetailsComponent} from "./shop/product-details/product-details.co
 import {TestErrorComponent} from "./core/test-error/test-error.component";
 import {ServerErrorComponent} from "./core/server-error/server-error.component";
 import {NotFoundComponent} from "./core/not-found/not-found.component";
+import {AuthGuard} from "./core/guards/auth.guard";
 
 const routes: Routes = [
   {
@@ -113,6 +114,7 @@ const routes: Routes = [
   },
   {
     path: 'checkout',
+    canActivate: [AuthGuard],
     loadChildren: () => import('./shop-checkout/shop-checkout.module').then(mod => mod.ShopCheckoutModule),
     data: {breadcrumb: 'Checkout'}
   },

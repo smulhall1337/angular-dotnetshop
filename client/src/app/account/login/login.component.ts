@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AccountService} from "../account.service";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -10,10 +10,12 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  returnUrl: string;
 
-  constructor(private accountService: AccountService, private router: Router) { }
+  constructor(private accountService: AccountService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl || '/shop'
     this.CreateLoginForm();
   }
 
@@ -29,8 +31,8 @@ export class LoginComponent implements OnInit {
 
   OnSubmit(){
     this.accountService.Login(this.loginForm.value).subscribe(() => {
-      this.router.navigateByUrl('/shop');
-    }, error => {
+      this.router.navigateByUrl(this.returnUrl); // send the user to where they were trying to go to before they logged in (if anything)
+      }, error => {
       console.log(error)
     });
   }

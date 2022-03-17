@@ -12,7 +12,7 @@ public class RegisterDto
     [EmailAddress]
     public string Email { get; set; }
     [Required]
-    [RegularExpression("	(?=^.{6,10}$)(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\\s).*$",
-        ErrorMessage = "Password must be at least 6 characters, containe 1 uppercase, 1 lowercase and 1 special character")] // regex helps us ensure that PWs meet our requirements 
+    [RegularExpression("(?=^.{6,10}$)(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\\s).*$",
+        ErrorMessage = "Password must be at least 6 characters, contain 1 uppercase, 1 lowercase and 1 special character")] // regex helps us ensure that PWs meet our requirements 
     public string Password { get; set; }
 }

@@ -16,8 +16,12 @@ export class LoadingInterceptor implements HttpInterceptor {
 
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    // increment busy count
-    this.busyService.busy();
+    if (!req.url.includes('emailexists')) {
+      // dont want to show a big loading icon while user is typing email
+      // increment busy count
+      this.busyService.busy();
+    }
+
     return next.handle(req).pipe(
       delay(1000),
       finalize(() => {

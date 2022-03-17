@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {IProduct} from "./shared/models/product";
 import {BasketService} from "./basket/basket.service";
 import {AccountService} from "./account/account.service";
@@ -13,28 +13,26 @@ export class AppComponent implements OnInit {
   title = 'Snap';
   products: IProduct[];
 
-  constructor(private basketService: BasketService, private accountService: AccountService) { }
+  constructor(private basketService: BasketService, private accountService: AccountService) {
+  }
 
-  LoadCurrentUser(){
+  LoadCurrentUser() {
     const token = localStorage.getItem('token');
-    if (token) {
-      this.accountService.LoadCurrentUser(token).subscribe(() => {
-        console.log('loaded user');
-      }, error => {
-        console.log(error);
-      })
-    }
+    this.accountService.LoadCurrentUser(token).subscribe(() => {
+      console.log('loaded user');
+    }, error => {
+      console.log(error);
+    })
   }
 
   ngOnInit(): void {
     this.LoadCurrentUser();
     const basketId = localStorage.getItem('basket_id'); // see if theres an existing basket
-    if (basketId)
-    {
+    if (basketId) {
       this.basketService.GetBasket(basketId).subscribe(() => {
-        console.log('basket initialised from local storage')
-      }, error => {
-        console.log(error);
+          console.log('basket initialised from local storage')
+        }, error => {
+          console.log(error);
         }
       );
     }
