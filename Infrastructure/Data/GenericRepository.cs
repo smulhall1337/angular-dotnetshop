@@ -13,7 +13,7 @@ namespace Infrastructure.Data
         {
             _context = context;
         }
-        public async Task<T> GetById(int id)
+        public async Task<T> GetByIdAsync(int id)
         {
             // Query the DB for whatever T is, then find by ID
             return await _context.Set<T>().FindAsync(id); 
@@ -42,6 +42,22 @@ namespace Infrastructure.Data
         public async Task<int> CountAsync(ISpecification<T> spec)
         {
             return await ApplySpecification(spec).CountAsync();
+        }
+
+        public void Add(T entity)
+        {
+            _context.Set<T>().Add(entity);
+        }
+
+        public void Update(T entity)
+        {
+            _context.Set<T>().Attach(entity);
+            _context.Entry(entity).State = EntityState.Modified;
+        }
+
+        public void Delete(T entity)
+        {
+            _context.Set<T>().Remove(entity);
         }
 
         // Create an IQueryable with the specifications specified by the calling method
