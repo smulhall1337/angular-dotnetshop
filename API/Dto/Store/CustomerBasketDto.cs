@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Core.Entities;
 
-namespace API.Dto;
+namespace API.Dto.Store;
 
 public class CustomerBasketDto
 {

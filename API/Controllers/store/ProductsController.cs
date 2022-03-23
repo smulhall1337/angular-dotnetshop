@@ -1,5 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
-using API.Dto;
+using API.Dto.Store;
 using API.Errors;
 using API.Helpers;
 using AutoMapper;
@@ -10,7 +10,7 @@ using Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
-namespace API.Controllers
+namespace API.Controllers.store
 {
     // these attributes will now be inherited from BaseApiController
     //[Route("api/v1/[controller]")]  

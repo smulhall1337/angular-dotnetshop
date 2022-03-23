@@ -1,5 +1,23 @@
 <div class="container mt-5">
-  <div class="h1">
-    Only Authorized users should be able to see this.
+  <div class="row">
+    <div class="col-8">
+      <app-stepper [linearModeSelected]="false">
+        <cdk-step [label]="'Address'">
+          Step 1
+        </cdk-step>
+        <cdk-step [label]="'Delivery'">
+          Step 1
+        </cdk-step>
+        <cdk-step [label]="'Review'">
+          Step 1
+        </cdk-step>
+        <cdk-step [label]="'Payment'">
+          Step 1
+        </cdk-step>
+      </app-stepper>
+    </div>
+    <div class="col-4">
+      <app-order-totals></app-order-totals>
+    </div>
   </div>
 </div>

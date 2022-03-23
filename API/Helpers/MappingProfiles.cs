@@ -1,4 +1,4 @@
-﻿using API.Dto;
+﻿using API.Dto.Store;
 using AutoMapper;
 using Core.Entities;
 using Core.Entities.OrderAggregate;

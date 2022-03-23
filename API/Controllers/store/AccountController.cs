@@ -1,5 +1,5 @@
 ﻿using System.Security.Claims;
-using API.Dto;
+using API.Dto.Store;
 using API.Errors;
 using API.Extensions;
 using AutoMapper;
@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
 
-namespace API.Controllers
+namespace API.Controllers.store
 {
     public class AccountController : BaseApiController
     {
@@ -29,7 +29,26 @@ namespace API.Controllers
             _tokenService = tokenService;
             _mapper = mapper;
         }
-
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /**
+         * Store methods start here
+         */
         [HttpGet]
         [Authorize]
         public ActionResult<UserDto> GetCurrentUser()

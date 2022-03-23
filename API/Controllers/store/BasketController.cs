@@ -1,9 +1,9 @@
-﻿using API.Dto;
+﻿using API.Dto.Store;
 using AutoMapper;
 using Core.Entities;
 using Microsoft.AspNetCore.Mvc;
 
-namespace API.Controllers
+namespace API.Controllers.store
 {
     public class BasketController : BaseApiController
     {

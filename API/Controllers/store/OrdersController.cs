@@ -1,6 +1,6 @@
 ﻿using System.Net;
 using System.Security.Claims;
-using API.Dto;
+using API.Dto.Store;
 using API.Errors;
 using API.Extensions;
 using AutoMapper;
@@ -8,7 +8,7 @@ using Core.Entities.OrderAggregate;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace API.Controllers;
+namespace API.Controllers.store;
 
 [Authorize]
 public class OrdersController: BaseApiController

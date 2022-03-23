@@ -1,6 +1,6 @@
 ﻿using Core.Entities.OrderAggregate;
 
-namespace API.Dto;
+namespace API.Dto.Store;
 
 public class OrderToReturnDto
 {

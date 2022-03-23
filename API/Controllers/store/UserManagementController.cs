@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 
-namespace Snap.Controllers
+namespace API.Controllers.store
 {
     [ApiController]
     [Route("api/v1/[controller]")]
